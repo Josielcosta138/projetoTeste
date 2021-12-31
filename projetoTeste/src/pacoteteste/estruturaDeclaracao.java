@@ -79,6 +79,7 @@ public class estruturaDeclaracao {
 			if (escolha == 0) {	// Opção Sim = 0 
 					
 				int continuarRemover = 0;
+				int posicao = 1;
 				
 				while (continuarRemover == 0) {				
 					
@@ -89,7 +90,9 @@ public class estruturaDeclaracao {
 				
 				
 				//Chamando na lista da Diciplina								// Posiçção na Lista [0], [1], [2], [3]  por isso (  - 1  )
-				aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() -1 );
+				aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() - posicao );
+				
+					posicao ++;
 				
 				continuarRemover = JOptionPane.showConfirmDialog(null, " Continuar a Remover? ");
 				

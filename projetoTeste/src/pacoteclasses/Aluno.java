@@ -18,9 +18,11 @@ public class Aluno {
 	private String nomePai;
 	private String nomeEscola;
 	private String seriaMatriculado;
+	private int qtddiciplina;
 	
 	
-	// Cria método Aluno - sendo padrão Java
+
+		// Cria método Aluno - sendo padrão Java
 		public Aluno () {
 		}
 		
@@ -51,6 +53,15 @@ public class Aluno {
 	
 	public String getNome() {
 		return nome;
+	}
+	
+
+	public int getQtddiciplina() {
+		return qtddiciplina;
+	}
+
+	public void setQtddiciplina(int qtddiciplina) {
+		this.qtddiciplina = qtddiciplina;
 	}
 
 	public int getIdade() {
