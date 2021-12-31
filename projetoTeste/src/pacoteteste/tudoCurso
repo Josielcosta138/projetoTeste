@@ -1,0 +1,1048 @@
+/*
+
+
+package pacoteteste;
+
+import javax.swing.JOptionPane;
+
+public class estruturaDeclaracao {
+
+	// MÉTODO ( MÉDIA ) COM -------- >>>   " CAIXA DE MENSAGEM  "
+	 
+	
+	public static void main(String[] args)  {
+		
+		// Váriaveis a ser usada.
+
+		double media ;
+		
+		
+			// Váriaveis sendo Setadas por " Caixa de Mensagem "
+		
+			JOptionPane.showMessageDialog(null, " Calcular Média. ");
+		
+			String nome = JOptionPane.showInputDialog(null, " Informe nome do Aluno ?");
+			String nota1 = JOptionPane.showInputDialog("Infome a Nota 1° ?");
+			String nota2 = JOptionPane.showInputDialog("Infome a Nota 2° ?");
+			String nota3 = JOptionPane.showInputDialog("Infome a Nota 3° ?");
+			String nota4 = JOptionPane.showInputDialog("Infome a Nota 4° ?");
+		
+		// Convertendo dados da Váriaveis que foram Setadas pela " Caixa de mensagem "
+		double notA1 = Double.parseDouble(nota1);
+		double notA2 = Double.parseDouble(nota2);
+		double notA3 = Double.parseDouble(nota3);
+		double notA4 = Double.parseDouble(nota4);
+		
+		
+			// Calculando médias do Aluno.
+			
+			media = (notA1 + notA2 + notA3 + notA4) / 4 ;
+			
+			JOptionPane.showMessageDialog(null, "  Resultado Final. \n "
+					+ " Aluno: "+nome);
+			
+			if (media >= 7) {
+				JOptionPane.showMessageDialog(null, " Aprovado! \n"
+						+ " Média: "+media);
+				
+				if (media > 9) {
+					JOptionPane.showMessageDialog(null, " Parabéns aluno: "+nome+""
+							+ "\n Voçê tirou uma ótima média: "+media+" \n"
+									+ " Continue assim. ");
+				}
+				
+			} else {
+				if (media < 7 && media >= 5) {                                                                            
+					JOptionPane.showMessageDialog(null, " Recuperação! \n"
+							+ " Média: "+media);
+					
+					int resultado = JOptionPane.showConfirmDialog(null, " Deseja ver suas Nota? ");
+					    if (resultado == 0) {
+					    	JOptionPane.showMessageDialog(null, " Nota 1 : "+notA1+" \n"
+					    			+ " Nota 2 : "+notA2+" \n"
+					    					+ " Nota 3 :"+notA3+" \n"
+					    							+ " Nota 4 :"+notA4+"\n"
+					    									+ "  "+"\n "
+					    											+ " Média : "+media);
+						}
+					    
+					    
+					    // Nova Nota para ( RECUPERAÇÃO )
+					    
+					    String notaRecuperacao = JOptionPane.showInputDialog("Infome a Nota da Recuperação°? ");
+					    double notaRecuperacaO = Double.parseDouble(notaRecuperacao);
+					    
+					    // Verificaçãoes da Nota 1 <------	
+					    
+					    if (notaRecuperacaO > notA1) {
+					    double mediaRecuperacao	= (notaRecuperacaO + notA2 + notA3 + notA4) / 4 ;
+					    
+					    	if (mediaRecuperacao >= 7) {
+								JOptionPane.showMessageDialog(null, " Aprovado na Recupeção: \n"
+										+ " Média: "+mediaRecuperacao);
+							} else {
+								JOptionPane.showMessageDialog(null, "Reprovado, Não alcançou a nota :( \n"
+										+ " Média"+mediaRecuperacao);
+							}
+					    					    
+						}
+					    
+					 // Verificaçãoes das Nota 2 <------
+					    else if (notaRecuperacaO > notA2) {
+						    double mediaRecuperacao	= (notaRecuperacaO + notA1 + notA3 + notA4) / 4 ;
+						    
+						    	if (mediaRecuperacao >= 7) {
+									JOptionPane.showMessageDialog(null, " Aprovado na Recupeção: \n"
+											+ " Média: "+mediaRecuperacao);
+								} else {
+									JOptionPane.showMessageDialog(null, "Reprovado, Não alcançou a nota :( \n"
+											+ " Média"+mediaRecuperacao);
+								}
+						    
+						    
+							}
+					    
+					 // Verificaçãoes das Nota 3 <------
+					    else if (notaRecuperacaO > notA3) {
+						    double mediaRecuperacao	= (notaRecuperacaO + notA2 + notA1 + notA4) / 4 ;
+						    
+						    	if (mediaRecuperacao >= 7) {
+									JOptionPane.showMessageDialog(null, " Aprovado na Recupeção: \n"
+											+ " Média: "+mediaRecuperacao);
+								} else {
+									JOptionPane.showMessageDialog(null, "Reprovado, Não alcançou a nota :( \n"
+											+ " Média"+mediaRecuperacao);
+								}
+						    
+						    
+							}
+					    
+					 // Verificaçãoes das Nota 4 <------
+					    else if (notaRecuperacaO > notA4) {
+						    double mediaRecuperacao	= (notaRecuperacaO + notA2 + notA3 + notA1) / 4 ;
+						    
+						    	if (mediaRecuperacao >= 7) {
+									JOptionPane.showMessageDialog(null, " Aprovado na Recupeção: \n"
+											+ " Média: "+mediaRecuperacao);
+								} else {
+									JOptionPane.showMessageDialog(null, "Reprovado, Não alcançou a nota :( \n"
+											+ " Média"+mediaRecuperacao);
+								}
+						    
+						    }
+					    
+					
+				} else {
+					JOptionPane.showMessageDialog(null, " Reprovado! \n"
+							+ " Média: "+media);
+				}
+			}
+			
+		
+		
+		
+		}
+}
+
+
+
+
+
+
+package pacoteteste;
+
+import javax.swing.JOptionPane;
+
+import pacoteclasses.Aluno;
+
+public class estruturaDeclaracao {
+
+	public static void main(String[] args) {
+
+		// New Aluno() é uma instancia ( Criação de Objeto ) cria na memória do Java
+		// aluno1 é uma referencia ao objeto Aluno
+		
+		
+		
+		// Entradas de Dados
+		/*
+		String nome = JOptionPane.showInputDialog(" Informe nome? ");
+		String idade = JOptionPane.showInputDialog(" Informe idade? ");
+		String cpf = JOptionPane.showInputDialog(" Informe cpf? ");
+		String telefone = JOptionPane.showInputDialog(" Informe telefone? ");
+		String matricula = JOptionPane.showInputDialog(" Informe matricula? ");
+		String dataNascimento = JOptionPane.showInputDialog(" Informe dataNascimento? ");
+		String rg = JOptionPane.showInputDialog(" Informe rg? ");
+		String nomeMae = JOptionPane.showInputDialog(" Informe nomeMae? ");
+		String nomePai = JOptionPane.showInputDialog(" Informe nomePai? ");
+		String escola = JOptionPane.showInputDialog(" Informe escola? ");
+		String anoMatricula = JOptionPane.showInputDialog(" Informe anoMatricula? ");
+		
+
+		// Setando dados nos atributos
+		// Inicializando Objeto 
+		Aluno aluno1 = new Aluno();
+		
+		
+		aluno1.setNome(nome);
+		aluno1.setIdade(Integer.valueOf(idade)); // Convertendo String para Inteiro
+		aluno1.setCpf(cpf);
+		aluno1.setTelefone(telefone);
+		aluno1.setDataMatricula(matricula);
+		aluno1.setDataNascimento(dataNascimento);
+		aluno1.setRegistroGeral(rg);
+		aluno1.setNomeMae(nomeMae);
+		aluno1.setNomePai(nomePai);
+		aluno1.setNomeEscola(escola);
+		aluno1.setSeriaMatriculado(anoMatricula);
+		
+		// Entrada de Dados
+		String nota1 = JOptionPane.showInputDialog("Infome Nota 1° ?");
+		String nota2 = JOptionPane.showInputDialog("Infome Nota 2° ?");
+		String nota3 = JOptionPane.showInputDialog("Infome Nota 3° ?");
+		String nota4 = JOptionPane.showInputDialog("Infome Nota 4° ?");
+		
+		
+		// Setando notas e convertendo para Double
+		aluno1.setNota1(Double.parseDouble(nota1));
+		aluno1.setNota2(Double.parseDouble(nota2));
+		aluno1.setNota3(Double.parseDouble(nota3));
+		aluno1.setNota4(Double.parseDouble(nota4));
+		
+		
+		
+		// Exibindo com ToString
+		JOptionPane.showMessageDialog(null," AlunO: "+aluno1);
+		JOptionPane.showMessageDialog(null, " Médi alunOO: "+aluno1.getMediaNota());
+		JOptionPane.showMessageDialog(null, " ResultadO: "+aluno1.getAlunoAprovado());
+		
+		
+		// Exibindo todas Informações do Aluno 
+		
+		/*JOptionPane.showMessageDialog(null,
+				" Nome: " + aluno1.getNome() + "\n" + " Idade: " + aluno1.getIdade()+"\n" + " Cpf: " + aluno1.getCpf()
+						+ " \n" + " Telefone: " + aluno1.getTelefone()+ " \n RG: " + aluno1.getRegistroGeral()
+						+ "\n" + " Data da Matricula: "
+						+ aluno1.getDataMatricula() +"\n -----------------------------------------"
+					    + "\n" + " Data de Nascimento: " + aluno1.getDataNascimento() 
+						+ "\n" + " Nome da Mãe: " + aluno1.getNomeMae() + "\n"
+						+ " Nome do Pai: " + aluno1.getNomePai()+"\n" + " Escola: " + aluno1.getNomeEscola() + "\n"
+						+ " Serie: " + aluno1.getSeriaMatriculado());
+		
+		
+		JOptionPane.showMessageDialog(null, " Aluno ! \n" +(aluno1.getAlunoAprovado()?" Aprovado" : " Reprovado"));
+			
+	
+			
+		/*if (aluno1.getMediaNota() >= 7) {
+			JOptionPane.showMessageDialog(null, " Aluno Aprovado! \n"
+					+ " Nome: " +aluno1.getNome()+"\n"
+					+ "\n Média do Aluno: "+ aluno1.getMediaNota());
+		} else {
+			JOptionPane.showMessageDialog(null, "\n Aluno Reprovado! \n"
+					+ " Nome: "+aluno1.getNome()+"\n"
+					+ " Média : "+ aluno1.getMediaNota());
+		}
+		*/
+		
+
+		// Equals e Hashcode
+		
+		Aluno aluno2 = new Aluno();		
+		aluno2.setNome("jo");
+		aluno2.setCpf("998642415");
+		
+		Aluno aluno3 = new Aluno();
+		aluno3.setNome("jo");
+		aluno3.setCpf("65358343");
+		
+		if (aluno2.equals(aluno3)) {
+			System.out.println(" Alunos Iguais ");
+		} else {
+			System.out.println(" Alunos Diferentes");
+		}
+		
+		System.out.println(" ");
+		
+		System.out.println(" Nome aluno 2:" +aluno2.getNome());
+		System.out.println(" Cpf: " +aluno2.getCpf());
+		System.out.println(" ");
+		System.out.println(" Nome aluno 3: " +aluno3.getNome());
+		System.out.println(" Cpf: " +aluno3.getCpf());
+	}
+}
+
+
+
+
+
+package pacoteclasses;
+
+/* Classe - Objeto que representa o Aluno */
+public class Aluno {
+	
+	// Atributos da classe Aluno
+	private String nome;
+	private int idade;
+	private String cpf;
+	private String telefone;
+	private String dataMatricula;
+	private String dataNascimento;
+	private String registroGeral;
+	private String nomeMae;
+	private String nomePai;
+	private String nomeEscola;
+	private String seriaMatriculado;
+	
+	double nota1 ;
+	double nota2 ;
+	double nota3 ;
+	double nota4 ;
+	
+	
+	// Cria dados na memória - sendo padrão Java
+	public Aluno () {
+	}
+	
+	
+	// Métodos GETTERS and SETTERS
+	// SET para receber ou adicionar dados no Atributos
+	// GET para resgatar ou obter valor do Atributo
+	// Receber dados
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getDataMatricula() {
+		return dataMatricula;
+	}
+
+	public void setDataMatricula(String dataMatricula) {
+		this.dataMatricula = dataMatricula;
+	}
+
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public String getRegistroGeral() {
+		return registroGeral;
+	}
+
+	public void setRegistroGeral(String registroGeral) {
+		this.registroGeral = registroGeral;
+	}
+
+	public String getNomeMae() {
+		return nomeMae;
+	}
+
+	public void setNomeMae(String nomeMae) {
+		this.nomeMae = nomeMae;
+	}
+
+	public String getNomePai() {
+		return nomePai;
+	}
+
+	public void setNomePai(String nomePai) {
+		this.nomePai = nomePai;
+	}
+
+	public String getNomeEscola() {
+		return nomeEscola;
+	}
+
+	public void setNomeEscola(String nomeEscola) {
+		this.nomeEscola = nomeEscola;
+	}
+
+	public String getSeriaMatriculado() {
+		return seriaMatriculado;
+	}
+
+	public void setSeriaMatriculado(String seriaMatriculado) {
+		this.seriaMatriculado = seriaMatriculado;
+	}
+
+
+	public double getNota1() {
+		return nota1;
+	}
+
+
+	public void setNota1(double nota1) {
+		this.nota1 = nota1;
+	}
+
+
+	public double getNota2() {
+		return nota2;
+	}
+
+
+	public void setNota2(double nota2) {
+		this.nota2 = nota2;
+	}
+
+
+	public double getNota3() {
+		return nota3;
+	}
+
+
+	public void setNota3(double nota3) {
+		this.nota3 = nota3;
+	}
+
+
+	public double getNota4() {
+		return nota4;
+	}
+
+
+	public void setNota4(double nota4) {
+		this.nota4 = nota4;
+	}
+	
+	
+	// Método que Retorna a media do aluno
+	public double getMediaNota () {
+		return (nota1 + nota2 + nota3 + nota4) /4;
+	}
+	
+	
+	
+	// Método verificação da Média
+	public String getAlunoAprovado () {
+		double media = this.getMediaNota();
+		
+		if (media >= 7) {			
+			return "Aprovado";
+			
+		} else {			
+			return "Reprovado";
+		
+		}
+	}
+
+
+	@Override
+	public String toString() {
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", telefone=" + telefone
+				+ ", dataMatricula=" + dataMatricula + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", nomeEscola=" + nomeEscola
+				+ ", seriaMatriculado=" + seriaMatriculado + ", nota1=" + nota1 + ", nota2=" + nota2 + ", nota3="
+				+ nota3 + ", nota4=" + nota4 + "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (cpf == null) {
+			if (other.cpf != null)
+				return false;
+		} else if (!cpf.equals(other.cpf))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		return true;
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// Método verificação da Média Com String
+		/*public String getAlunoAprovado2 () {
+			double media = this.getMediaNota();
+			
+			
+			if (media >= 7) {			
+				return " Aluno Aprovado! ";
+				
+		 
+			} else {			
+				return " Aluno Reprovado! ";
+			
+			}
+			
+		}*/
+	
+	
+}
+
+
+
+
+/--------------------------------------------------------------------------------------------------------------------/
+
+
+
+
+// MÉTODO OPERADOR MÓD % Restante da Divisão 
+	public static void main(String[] args)  {
+
+		int caneca = 37 ;
+		int cliente = 2 ;
+		
+		int totalPcliente;
+		
+		int saldoCliente1 ;
+		int saldoCliente2;
+			
+		  int saldoRestante ;
+		
+		    totalPcliente = caneca / 2 ;
+		    
+		    saldoCliente1 = totalPcliente;
+		    saldoCliente2 = totalPcliente;
+		    
+		    saldoRestante = caneca % cliente ;	/*MOD*/
+		
+		
+		System.out.println(" N° Saldo total de canecas: "+caneca+""
+				+ " 	  \n N° de clientes: "+cliente+""
+					   + "\n N° de canecas de Cliente 1°: "+saldoCliente1+""
+					   + "\n N° de canecas de Cliente 2°: "+saldoCliente2+""
+					   + "\n N° saldo Restante de canecas: "+saldoRestante);
+
+
+
+
+//        MÉTODO SWITCH E WHILE          //
+
+
+package pacoteteste;
+
+import java.util.Scanner;
+
+import java.io.*;
+
+public class estruturaDeclaracao {
+
+	public static Scanner input = new Scanner(System.in);
+
+	// Método execultavel do Java
+	public static void main(String[] args) throws IOException {
+
+		double quantidadeLitrosViagem, consumoPorLitro, tempoViagem, velociadeMedia;
+		double distancia, litrosUsado, precoCombustivel, valorCombustivel;
+		double quantidadePedagio;
+		double valorPedagio, pedagioGasolina, gastoPedagio;
+		String nome;
+
+		consumoPorLitro = 12;
+		valorPedagio = 3.96;
+
+		System.out.println(" -- Programa Computador de Bordo --");
+
+		System.out.println("\n Informe seu nome ? ");
+		nome = input.next();
+
+		System.out.print("\n Informe o tempo de sua Viagem ? : ");
+		tempoViagem = input.nextDouble();
+
+		System.out.print("\n Informe a velocidade Média de sua Viagem ? : ");
+		velociadeMedia = input.nextDouble();
+
+		System.out.print("\n Informe Preço do Combustivel ? : ");
+		precoCombustivel = input.nextDouble();
+
+		System.out.print("\n Informe Quantidade de Pedágios ? : ");
+		quantidadePedagio = input.nextDouble();
+
+			distancia = tempoViagem * velociadeMedia;
+
+			quantidadeLitrosViagem = distancia / consumoPorLitro;
+
+			valorCombustivel = precoCombustivel * quantidadeLitrosViagem;
+
+			gastoPedagio = valorPedagio * quantidadePedagio;
+
+			pedagioGasolina = gastoPedagio + valorCombustivel;
+			
+			
+			
+			
+			System.out.println("----------------------------------------------------");
+			System.out.println(" ");
+			System.out.println(" ---> Informações do Computador de Bordo<--- \n");
+			System.out.println(" ");
+			System.out.println(" Escolha um tipo de vizualização ? \n");
+			System.out.println(" ");
+			System.out.print("\n Individual ou Parcial ? ");
+			System.out.println(" ");
+			System.out.print("\n 1° Individual. ");
+			System.out.print("\n 2° Parcial. ");
+			System.out.print("\n 3° Sair. ");
+			System.out.println(" ");
+			
+			int opcaoVisualizacao  = input.nextInt();
+			
+			int opcao = 0;
+			
+			switch (opcaoVisualizacao) {
+			
+			case 1:
+				System.out.println(" Vizualizção Individual ");
+				System.out.println(" ");
+				System.out.println(" ---> Informações do Computador de Bordo<--- \n");
+				System.out.println(" ");
+				System.out.println(" Escolha uma opção ");
+				System.out.println(" ");
+				System.out.println(" ");
+				System.out.print("\n 1° Tempo Viagem. ");
+				System.out.print("\n 2° Velocidade Média. ");
+				System.out.print("\n 3° Distância. ");
+				System.out.print("\n 4° Quantidade de Litros gastos. ");
+				System.out.print("\n 5° Gastos Comustivel Viagem. ");
+				System.out.print("\n 6° Gastos Pedágio. ");
+				System.out.print("\n 7° Gastos Pedágio E Gasolina. ");
+				System.out.print("\n 8° Sair. ");
+				System.out.println(" ");
+				System.out.println(" ");
+				
+				
+									
+				while (opcao != 8) {
+					
+					opcao = input.nextInt();
+					
+				switch (opcao) {
+				
+				case 1:
+					System.out.println(" Condutor :"+nome);
+					System.out.println(" ");
+					System.out.println(" Tempo Viagem "+tempoViagem);
+					break;
+					
+				case 2:
+					System.out.println(" Condutor :"+nome);
+					System.out.println(" ");
+					System.out.println(" Velocidade Média "+velociadeMedia);
+					break;
+					
+				case 3:
+					System.out.println(" Condutor :"+nome);
+					System.out.println(" ");
+					System.out.println(" Distância "+distancia);
+					break;
+					
+				case 4:
+					System.out.println(" Condutor :"+nome);
+					System.out.println(" ");
+					System.out.println(" Quantidade de Litros gastos "+quantidadeLitrosViagem);
+					break;
+					
+				case 5:
+					System.out.println(" Condutor :"+nome);
+					System.out.println(" ");
+					System.out.println(" Gastos Comustivel Viagem "+valorCombustivel);
+					break;
+					
+				case 6:
+					System.out.println(" Condutor :"+nome);
+					System.out.println(" ");
+					System.out.println(" Gastos Pedágio "+gastoPedagio);
+					break;
+					
+				case 7:
+					System.out.println(" Condutor :"+nome);
+					System.out.println(" ");
+					System.out.println(" Gastos Pedágio E Gasolina "+pedagioGasolina);
+					break;
+				
+				case 8:
+					System.out.println(" Sair....");
+					break;
+					
+				default:
+					System.out.println(" Opção Invalida! ");
+					break;
+				}
+			}
+			
+			break;
+				
+			case 2:
+			
+				System.out.println("----------------------------------------------------");
+				System.out.println(" ");
+				System.out.println(" Vizualização Parcial ");
+				System.out.println(" ");
+				System.out.println(" ---> Informações do Computador de Bordo<--- \n");
+				System.out.println(" ");
+				System.out.println(" Condutor : "+nome+" .");
+				System.out.println(" ");
+				System.out.println(" ");
+				System.out.println(" Tempo de Viagem: "+tempoViagem+" Hras");
+				System.out.println(" ");
+				System.out.println(" Velocidade Média: "+velociadeMedia+" Km/h");
+				System.out.println(" ");
+				System.out.println(" Distancia: "+distancia+" Km");
+				System.out.println(" ");
+				System.out.println(" Quantidade de Litros gastos: "+quantidadeLitrosViagem+" L");
+				System.out.println(" ");
+				System.out.println(" Gastos Comustivel Viagem: "+valorCombustivel+" R$");
+				System.out.println(" ");
+	            System.out.println(" Gastos Pedágio: "+gastoPedagio+" Pdg");
+	            System.out.println(" ");
+	            System.out.println(" Gastos Pedágio E Gasolina: "+pedagioGasolina+" Pdg");
+	            System.out.println(" ");
+	            System.out.println("------------------------------------------------------------|");
+					
+				break;
+				
+			case 3:
+				System.out.println(" Sair...");
+				
+				break;
+				
+			default:
+				System.out.println(" OPÇÃO INVALIDA ");
+					
+				break;
+			}
+			
+			
+		}
+}
+
+
+
+// Método execultavel do Java
+	public static void main(String[] args) {
+
+		// Estrutura repetição FOR com Break E Continue e Verificação de IF e Else e OU ||
+		// Encotrar um dado em uma variavel dentro do For ou Lista
+
+		int num1If = 21;
+		int num2If = 48;
+		int num3If = 39;
+		
+		System.out.println(" 1° Teste For: ");
+		
+		for (int numero = 5; numero <= 99; numero++) {
+			System.out.println(" Num: "+numero);
+			
+			if (numero == num1If || numero == num3If) {
+				System.out.println("   " );
+				System.out.println(" Teste If 1° Encontrado e Continuo! \n Num: " + num1If);
+				continue;
+				
+			} else {
+
+				if (numero == num2If) {
+					System.out.println("   " );
+					System.out.println(" Teste If 2° Encontrado! \n Num: " + num2If);
+					
+					break;
+				}
+
+			}
+
+		}
+
+
+
+
+
+
+// Método execultavel do Java
+	public static void main(String[] args) {
+
+		// Estrutura repetição FOR com Parada e Verificação de IF e Else
+		// Encotrar um dado em uma variavel dentro do For ou Lista
+
+		int num1If = 27;
+		int num2If = 24;
+
+		for (int numero = 5; numero <= 99; numero++) {
+			System.out.println(" Num: "+numero);
+			
+
+			if (numero == num1If) {
+				System.out.println("   " );
+				System.out.println(" Teste If 1 Encontrado! \n Num: " + num1If);
+				break;
+			} else {
+
+				if (numero == num2If) {
+					System.out.println("   " );
+					System.out.println(" Teste If 2 Encontrado! \n Num: " + num2If);
+					
+					break;
+				}
+
+
+
+
+//Estrutura While - Do while Enquanto
+
+		int contador = 1;
+		String nome = "joao";
+		String nome1 = "pedro";
+		
+		while (contador <= 8 ) {   	// Verifica depois Executa
+			
+			System.out.println(" Contador: "+contador);
+			//System.out.println(" Nome: "+nome+"-"+nome1);
+			
+			contador++;
+			
+			
+		}
+		
+		int contador1 = 1;
+		
+		do {				// Executa depois Executa
+						
+			System.out.println(" Contador: "+contador1);
+			contador1 ++;
+		} while (contador1 <= 5);
+
+
+
+//Operadores Relacionais.
+		int valor1 = 49;
+		int valor2 = 29;
+		int valor3 = 49;
+		
+		
+		if (valor1 == valor2) {
+			System.out.println(" Valores diferentes."+valor1+"-"+valor2);
+			
+		} else {
+			if (valor1 != valor3) {
+				System.out.println(" Valores iguais"+valor1+"-"+valor3);
+			}else {
+				System.out.println(" Duas verificações diferentes! ");
+			}
+			
+
+		}
+
+
+
+
+/*SWITCH CASE: OPERAÇOES EXATAS*/
+		// Para escolhas,tipos 'MENUS'
+		
+		int doca = 5;
+
+		int box1 = 38;
+		int box2 = 42;
+		int box3 = 342;
+		int box4 = 43;
+
+		  
+		   int totalBox;
+		
+		   totalBox = (box1 + box2 + box3 + box4) * 4^2;
+		   
+		switch (doca) {
+		case 1:
+			System.out.println(" Box 1º armazenado: "+box1+" Itens.");
+			break;
+		case 2:
+			System.out.println(" Box 2º armazenado: "+box2+" Itens.");
+			break;	
+		case 3:
+			System.out.println(" Box 3º armazenado: "+box3+" Itens.");
+			break;	
+		case 4:
+			System.out.println(" Box 4º armazenado: "+box4+" Itens.");
+			break;	
+		case 5:
+			System.out.println(" Total de itens no estoque: "+totalBox);
+			
+			break;
+
+		default:
+			System.out.println(" Box Invalido!: ");
+			break;
+			
+		}
+
+
+
+// Operações Aninhadas: Operações dentro de operações.
+		mediaAluno = (nota1 + nota2 + nota3 + nota4) / 4;
+		
+		
+			if (mediaAluno >= 5) {
+				if (mediaAluno >= 7) {
+					System.out.println(" Aprovado: "+mediaAluno);
+					if (mediaAluno>= 9) {
+						System.out.println(" Parabéns Acima da Média: "+mediaAluno);
+						
+					}
+				}else {
+					System.out.println(" Caiu na recuperação ");
+					System.out.println(" ");
+					System.out.println(" Recuperação: "+mediaAluno);
+					System.out.println(" ----------------------------- ");
+					System.out.println(" ");
+					
+					nota1 = 6; nota2 = 7; nota3 = 8 ; nota4 = 7;		// Refazendo notas e Média
+					mediaAluno = (nota1 + nota2 + nota3 + nota4) / 4;
+					
+					if (mediaAluno >= media) {					// Média entrando na Condição
+						System.out.println(" Passou na recuperação: "+mediaAluno);
+						
+					} else {
+						System.out.println(" Reprovou na recuperação: "+mediaAluno);
+
+					}
+				}
+			} else {
+				System.out.println(" Reprovado: "+mediaAluno);
+
+			}
+
+
+
+
+
+/* Condições lógicas com IF e ELSE
+		
+		
+			System.out.println(" Media: "+mediaAluno);
+
+		  if (mediaAluno >= media) {
+			  System.out.println(" Aluno aprovado: "+mediaAluno);
+			  
+			  
+		  }else if (mediaAluno < media && mediaAluno >= 4) {
+				System.out.println(" Fazer recuperação: "+mediaAluno);
+				
+			}
+			   else {
+			      System.out.println(" Aluno reprovado: "+mediaAluno);
+				
+			}
+
+		}*/	
+
+
+
+
+
+
+/* Operadores Ternários ' Para micro Validações */
+		
+		mediaAluno = (nota1 + nota2 + nota3 + nota4) / 4;
+		
+		String saidaResultado = mediaAluno >= media? " Aluno aprovado." : (mediaAluno < media && mediaAluno >= 4)?  
+				"Aluno recuperação." : " Aluno reprovado.";
+		System.out.println(saidaResultado + " - media: "+ mediaAluno);
+
+
+
+
+ * // Armazenar caracter String nome = " Josiel Costa"; String cpf =
+ * " 069.870.209-34"; String endereco = " Rua Gen Osvaldo Pinto da Veiga";
+ * 
+ * System.out.println(" Nome: "+nome+"\n " + "cpf: "+cpf+
+ * " endereco: \n"+endereco);
+ * 
+ * 
+ * // Define uma variavel com uma Letra char pessoaFisica = 'F'; char
+ * pessoaJuridica = 'J'; char assinaturaSim = 's'; char assinaturaNao = 'n';
+ * 
+ * int idade = 18 ;
+ * 
+ * 
+ * if (pessoaFisica == 'J') { System.out.println(" Pessoa Fisica. ");
+ * 
+ * if (idade >= 19) { System.out.println(" Autorizado abrir Conta! ");
+ * 
+ * }else { System.out.println(" Assinatura do Responsável! ");
+ * 
+ * if (assinaturaSim == 'n') {
+ * System.out.println(" Pegar documentação necessária! ");
+ * 
+ * } else { System.out.println(" Falta Assinatura! ");
+ * 
+ * } }
+ * 
+ * } else { System.out.println(" Pessoa Jurídica. ");
+ * 
+ * 
+ * 
+ 
+ 
+ * }
+ * 
+ * /* double nota1 = 31; double nota2 = 43; double nota3 = 435; double nota4 =
+ * 5;
+ * 
+ * double media; double soma;
+ * 
+ * soma = nota1 + nota2 + nota3 + nota4; media = (nota1 + nota2 + nota3 + nota4)
+ * /4;
+ * 
+ * System.out.println(" Soma das Notas: " +soma) ;
+ * System.out.println(" Média das Notas: " +media) ;
+ * 
+ */
