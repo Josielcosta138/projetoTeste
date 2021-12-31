@@ -23,6 +23,7 @@ public class estruturaDeclaracao {
 			
  	
      	String nome = JOptionPane.showInputDialog(" Informe nome? ");
+     	String qtddiciplina = JOptionPane.showInputDialog(" Informe qntd diciplinas? ");
      	/*String idade = JOptionPane.showInputDialog(" Informe idade? ");
 		String cpf = JOptionPane.showInputDialog(" Informe cpf? ");
 		String telefone = JOptionPane.showInputDialog(" Informe telefone? ");
@@ -36,6 +37,7 @@ public class estruturaDeclaracao {
 		
 		
 		aluno1.setNome(nome);
+		aluno1.setQtddiciplina(Integer.valueOf(qtddiciplina));
 		/*aluno1.setIdade(Integer.valueOf(idade)); // Convertendo String para Inteiro
 		aluno1.setCpf(cpf);
 		aluno1.setTelefone(telefone);
@@ -47,15 +49,17 @@ public class estruturaDeclaracao {
 		aluno1.setNomeEscola(escola);
 		aluno1.setSeriaMatriculado(anoMatricula);*/
 		
+		  
 		
 		//  For para criar Lista de Nota e Diciplina
-		for (int pos = 1; pos <= 4; pos++) {
+		for (int pos = 1; pos <= aluno1.getQtddiciplina(); pos++) {
+			
 			String nomeDiciplina =JOptionPane.showInputDialog(" Informe a diciplina "+pos+"°?");
 			String notaDiciplina =JOptionPane.showInputDialog(" Informe a nota "+pos+"°?");
 			
-			Diciplina diciplina = new Diciplina();
-			diciplina.setDiciplina(nomeDiciplina);
-			diciplina.setNota(Double.valueOf(notaDiciplina)); //transformou String em Double
+				Diciplina diciplina = new Diciplina();
+				diciplina.setDiciplina(nomeDiciplina);
+				diciplina.setNota(Double.valueOf(notaDiciplina)); //transformou String em Double
 			
 			aluno1.getDiciplinas().add(diciplina); // adicionou a Lista de diciplinas
 		
