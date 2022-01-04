@@ -1,0 +1,14 @@
+// Exibindo com Resultados na Tela com ToString4
+				System.out.println(" ");
+				System.out.println("\n Lista Atualizada: "
+						+ " Aluno : " +aluno1+ "\n"
+						+ " Media aluno: "+aluno1.getMediaNota()+"\n"
+						+ " Resultado: "+aluno1.getAlunoAprovado() );
+				System.out.println("------------------------------------");
+				
+				
+				
+				if (aluno.getNome().equalsIgnoreCase(anotherString)) {
+	 				
+	 				
+	 				}

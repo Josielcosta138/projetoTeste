@@ -19,6 +19,7 @@ public class Aluno {
 	private String nomeEscola;
 	private String seriaMatriculado;
 	private int qtddiciplina;
+	private int qtdAlunos;
 	
 	
 
@@ -28,7 +29,7 @@ public class Aluno {
 		
 			
 	// Instancia Objeto na memória - Tipo Lista 
-	private List<Diciplina> diciplinas = new ArrayList<Diciplina>();
+	 List<Diciplina> diciplinas = new ArrayList<Diciplina>();
 
 	// Setters e Getters de diciplinas
 	public void setDiciplinas(List<Diciplina> diciplinas) {
@@ -47,10 +48,21 @@ public class Aluno {
 	// GET para resgatar ou obter valor do Atributo
 	// Receber dados
 	
+	
+	
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	
+	public int getQtdAlunos() {
+		return qtdAlunos;
+	}
+
+	public void setQtdAlunos(int qtdAlunos) {
+		this.qtdAlunos = qtdAlunos;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -144,8 +156,7 @@ public class Aluno {
 		this.seriaMatriculado = seriaMatriculado;
 	}
 	
-	
-	
+		
 	// Método que Retorna a media do aluno
 			public double getMediaNota () {
 				
@@ -162,8 +173,7 @@ public class Aluno {
 				return somaNotas /diciplinas.size(); 
 			}
 	
-	
-	
+		
 	// Método verificação da Média
 	public String getAlunoAprovado () {
 		double media = this.getMediaNota();
@@ -189,11 +199,10 @@ public class Aluno {
 	@Override
 	public String toString() {
 		return "Aluno [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", telefone=" + telefone
-				+ ", dataMatricula=" + dataMatricula + ",\n"
-				+ " dataNascimento=" + dataNascimento + ", registroGeral="
-				+ registroGeral + ", nomeMae=" + nomeMae + ", \n"
-				+ "nomePai=" + nomePai + ", nomeEscola=" + nomeEscola
-				+ ", seriaMatriculado=" + seriaMatriculado + ", diciplinas=" + diciplinas + "]";
+				+ ", dataMatricula=" + dataMatricula + ", dataNascimento=" + dataNascimento + ", registroGeral="
+				+ registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", nomeEscola=" + nomeEscola
+				+ ", seriaMatriculado=" + seriaMatriculado + ", qtddiciplina=" + qtddiciplina + ", qtdAlunos="
+				+ qtdAlunos + ", diciplinas=" + diciplinas + "]";
 	}
 
 	@Override
@@ -227,33 +236,5 @@ public class Aluno {
 			return false;
 		return true;
 	}
-
-
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	// Método verificação da Média Com String
-		/*public String getAlunoAprovado2 () {
-			double media = this.getMediaNota();
-			
-			
-			if (media >= 7) {			
-				return " Aluno Aprovado! ";
-				
-		 
-			} else {			
-				return " Aluno Reprovado! ";
-			
-			}
-			
-		}*/
-	
 	
 }

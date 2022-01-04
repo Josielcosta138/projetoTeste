@@ -2,7 +2,7 @@ package pacoteclasses;
 
 public class Diciplina {
 
-	
+	//Atributos da Diciplina
 	private String diciplina;
 	double nota ;
 	
