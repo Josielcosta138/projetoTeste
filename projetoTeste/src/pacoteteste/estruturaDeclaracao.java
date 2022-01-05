@@ -26,7 +26,7 @@ public class estruturaDeclaracao {
 		 //String qtdAlunos = JOptionPane.showInputDialog(" Quantos alunos na sala? ");
 		// aluno1.setQtdAlunos(Integer.valueOf(qtdAlunos));
 		 
-		 	for (int posAlunos = 1; posAlunos <= 2; posAlunos++) {
+		 	for (int posAlunos = 1; posAlunos <= 3; posAlunos++) {
 			
 		 	// Inicializando Objeto 		
 			Aluno aluno1 = new Aluno();
@@ -104,25 +104,25 @@ public class estruturaDeclaracao {
 		 	}
 		 	
 		 	
-		 	
 		 	// Menu para escolher o Tipo de visualização de Aluno. 
 		 	JOptionPane.showMessageDialog(null,
 		 			  " Informe sua pesquisa ?\n"
 		 			+ " 1° - Vizualizar todos Alunos ? \n"
-		 			+ " 2° - Somente 1 aluno ?");
+		 			+ " 2° - Somente 1 aluno ? \n"
+		 			+ " 3° - Remover aluno ? ");
 		 	
 		 		String opcaoVisualizacao = JOptionPane.showInputDialog(" Informe sua Vizualização! \n"
-		 				+ " 1° ou 2° ");
+		 				+ " 1° , 2° ou 3° ?  ");
 		 		
 		 		int opcaoVisualizacaoConvertido = Integer.parseInt(opcaoVisualizacao);
 		 		
 			switch (opcaoVisualizacaoConvertido) {
 			
+			
 			case 1 :		// Vizualicação todos os Alunos do Lista
 		 		
 			for (Aluno aluno : alunos) {
 					
-				// Exibindo com Resultados na Tela com ToString
 	 			System.out.println(" Aluno : " +aluno.getNome()+ "\n"
 	 			+" Diciplina: "+aluno.getDiciplinas()+"\n" 
 	 			+" Media aluno: "+aluno.getMediaNota()+"\n"
@@ -134,24 +134,53 @@ public class estruturaDeclaracao {
 	 				
 	 			case 2 :  	// Vizualicação somente 1 Aluno do Lista
 	 				
+	 				String nomePesquisa = JOptionPane.showInputDialog(null, " Informe nome para pesquisa? ");
+	 				
 	 				for (Aluno aluno : alunos) {
 	 					
-	 					if (aluno.getNome().equalsIgnoreCase("jose")) {
+	 					if (aluno.getNome().equalsIgnoreCase(nomePesquisa)) {
 	 		 					
-	 					//int escolha = JOptionPane.showConfirmDialog(null, " Deseja ver todos Alunos? ");
-	 						
-	 					// Exibindo com Resultados na Tela com ToString3
 	 		 			System.out.println(" Aluno : " +aluno.getNome()+ "\n"
 	 		 			+" Diciplina: "+aluno.getDiciplinas()+"\n" 
 	 		 			+" Media aluno: "+aluno.getMediaNota()+"\n"
 	 		 			+" Resultado: "+aluno.getAlunoAprovado());
 	 		 			System.out.println("---------------------------------------");
-	 		 			break;	
+	 		 			break;	 
 	 					}
-	 		 			
-	 		 			
-	 			
-				}
+	 				}
+	 				
+	 				//aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() - posicao );
+	 				
+	 			case 3 :	// Removendo aluno da Lista
+	 				
+	 				String nomeRemover = JOptionPane.showInputDialog(null, " Informe nome para remover? ");
+	 						
+	 				for (Aluno aluno : alunos) {	
+	 					
+	 					if (aluno.getNome().equals(nomeRemover)) {
+	 						alunos.remove(String.valueOf(nomeRemover));
+	 						
+		 				 	break;
+		 				 	
+		 					}  
+					}
+	 			}
+	 				
+	 				
+	 				for (Aluno aluno : alunos) {
+	 					
+	 					System.out.println(" Alunos que sobram na Lista ! \n "
+	 							+" Aluno : " +aluno.getNome()+ "\n "
+	 							+" Suas Materias: ");
+	 					
+	 						for (Diciplina diciplina : aluno.getDiciplinas()) {
+							
+	 							System.out.println(" Diciplina: "+aluno.getDiciplinas());
+	 							System.out.println("---------------------------------------");
+	 				 	break;
+	 				 	
+	 					}
+					}
 			}
 	}
 }
