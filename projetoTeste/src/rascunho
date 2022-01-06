@@ -7,8 +7,72 @@
 				System.out.println("------------------------------------");
 				
 				
+				case 1 :		// Vizualicação todos os Alunos do Lista
+		 		
+			for (Aluno aluno : alunos) {
+					
+	 			System.out.println(" Aluno : " +aluno.getNome()+ "\n"
+	 			+" Diciplina: "+aluno.getDiciplinas()+"\n" 
+	 			+" Media aluno: "+aluno.getMediaNota()+"\n"
+	 			+" Resultado: "+aluno.getAlunoAprovado());
+	 			System.out.println("---------------------------------------");
+	 			break;
+			}
+	 			
+	 				
+	 			case 2 :  	// Vizualicação somente 1 Aluno do Lista
+	 				
+	 				String nomePesquisa = JOptionPane.showInputDialog(null, " Informe nome para pesquisa? ");
+	 				
+	 				for (Aluno aluno : alunos) {
+	 					
+	 					if (aluno.getNome().equalsIgnoreCase(nomePesquisa)) {
+	 		 					
+	 		 			System.out.println(" Aluno : " +aluno.getNome()+ "\n"
+	 		 			+" Diciplina: "+aluno.getDiciplinas()+"\n" 
+	 		 			+" Media aluno: "+aluno.getMediaNota()+"\n"
+	 		 			+" Resultado: "+aluno.getAlunoAprovado());
+	 		 			System.out.println("---------------------------------------");
+	 		 			break;	 
+	 					}
+	 				}
+				
 				
 				if (aluno.getNome().equalsIgnoreCase(anotherString)) {
 	 				
 	 				
 	 				}
+	 				
+	 				
+	 				
+	 				//aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() - posicao );
+	 				
+	 			case 3 :	// Removendo aluno da Lista
+	 				
+	 				//String nomeRemover = JOptionPane.showInputDialog(null, " Informe nome para remover? ");
+	 						
+	 				for (Aluno aluno : alunos) {	
+	 					
+	 					if (aluno.getNome().equalsIgnoreCase("ju")) {
+	 						alunos.remove(aluno);
+	 						
+		 				 	break;
+		 				 	
+		 					}  
+					}
+	 			}
+	 				
+	 				
+	 				for (Aluno aluno : alunos) {
+	 					
+	 					System.out.println(" Alunos que sobram na Lista ! \n "
+	 							+" Aluno : " +aluno.getNome()+ "\n "
+	 							+" Suas Materias: ");
+	 					
+	 						for (Diciplina diciplina : aluno.getDiciplinas()) {
+							
+	 							System.out.println(" Diciplina: "+diciplina.getDiciplina());
+	 							System.out.println("---------------------------------------");
+	 				 	break;
+	 				 	
+	 					}
