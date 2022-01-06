@@ -26,7 +26,7 @@ public class estruturaDeclaracao {
 		 //String qtdAlunos = JOptionPane.showInputDialog(" Quantos alunos na sala? ");
 		// aluno1.setQtdAlunos(Integer.valueOf(qtdAlunos));
 		 
-		 	for (int posAlunos = 1; posAlunos <= 3; posAlunos++) {
+		 	for (int posAlunos = 1; posAlunos <= 2; posAlunos++) {
 			
 		 	// Inicializando Objeto 		
 			Aluno aluno1 = new Aluno();
@@ -76,7 +76,7 @@ public class estruturaDeclaracao {
 		
 		}
 				
-		// Removendo Diciplina 
+		/* Removendo Diciplina 
 		int escolha = JOptionPane.showConfirmDialog(null, " Deseja excluir alguma Diciplina? ");
 						
 			if (escolha == 0) {	// Opção Sim = 0 
@@ -96,91 +96,32 @@ public class estruturaDeclaracao {
 				continuarRemover = JOptionPane.showConfirmDialog(null, " Continuar a Remover? ");	
 				
 				}// while		
-			}
+			}*/
 		 
 			
 			alunos.add(aluno1); // Adicionando a o aluno1 a Lista de (alunos) 	
 			
-		 	}
+		   } // Percorrendo Lista pelas Posições
 		 	
 		 	
-		 	// Menu para escolher o Tipo de visualização de Aluno. 
-		 	JOptionPane.showMessageDialog(null,
-		 			  " Informe sua pesquisa ?\n"
-		 			+ " 1° - Vizualizar todos Alunos ? \n"
-		 			+ " 2° - Somente 1 aluno ? \n"
-		 			+ " 3° - Remover aluno ? ");
-		 	
-		 		String opcaoVisualizacao = JOptionPane.showInputDialog(" Informe sua Vizualização! \n"
-		 				+ " 1° , 2° ou 3° ?  ");
-		 		
-		 		int opcaoVisualizacaoConvertido = Integer.parseInt(opcaoVisualizacao);
-		 		
-			switch (opcaoVisualizacaoConvertido) {
-			
-			
-			case 1 :		// Vizualicação todos os Alunos do Lista
-		 		
-			for (Aluno aluno : alunos) {
-					
-	 			System.out.println(" Aluno : " +aluno.getNome()+ "\n"
-	 			+" Diciplina: "+aluno.getDiciplinas()+"\n" 
-	 			+" Media aluno: "+aluno.getMediaNota()+"\n"
-	 			+" Resultado: "+aluno.getAlunoAprovado());
-	 			System.out.println("---------------------------------------");
-	 			break;
+		   for (int pos = 0; pos < alunos.size(); pos++) {
+			   
+			   System.out.println(" ");
+			   Aluno aluno = alunos.get(pos);
+			   System.out.println(" Aluno: "+aluno.getNome());
+			   
+			   
+			   for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
+				   Diciplina disc = aluno.getDiciplinas().get(posList);
+					System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
 			}
-	 			
-	 				
-	 			case 2 :  	// Vizualicação somente 1 Aluno do Lista
-	 				
-	 				String nomePesquisa = JOptionPane.showInputDialog(null, " Informe nome para pesquisa? ");
-	 				
-	 				for (Aluno aluno : alunos) {
-	 					
-	 					if (aluno.getNome().equalsIgnoreCase(nomePesquisa)) {
-	 		 					
-	 		 			System.out.println(" Aluno : " +aluno.getNome()+ "\n"
-	 		 			+" Diciplina: "+aluno.getDiciplinas()+"\n" 
-	 		 			+" Media aluno: "+aluno.getMediaNota()+"\n"
-	 		 			+" Resultado: "+aluno.getAlunoAprovado());
-	 		 			System.out.println("---------------------------------------");
-	 		 			break;	 
-	 					}
-	 				}
-	 				
-	 				//aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() - posicao );
-	 				
-	 			case 3 :	// Removendo aluno da Lista
-	 				
-	 				String nomeRemover = JOptionPane.showInputDialog(null, " Informe nome para remover? ");
-	 						
-	 				for (Aluno aluno : alunos) {	
-	 					
-	 					if (aluno.getNome().equals(nomeRemover)) {
-	 						alunos.remove(String.valueOf(nomeRemover));
-	 						
-		 				 	break;
-		 				 	
-		 					}  
-					}
-	 			}
-	 				
-	 				
-	 				for (Aluno aluno : alunos) {
-	 					
-	 					System.out.println(" Alunos que sobram na Lista ! \n "
-	 							+" Aluno : " +aluno.getNome()+ "\n "
-	 							+" Suas Materias: ");
-	 					
-	 						for (Diciplina diciplina : aluno.getDiciplinas()) {
-							
-	 							System.out.println(" Diciplina: "+aluno.getDiciplinas());
-	 							System.out.println("---------------------------------------");
-	 				 	break;
-	 				 	
-	 					}
-					}
-			}
-	}
-}
+			   
+			   System.out.println(" Média: "+aluno.getMediaNota());
+			   System.out.println(" Resultado: "+aluno.getAlunoAprovado());
+			   
+			   
+		  }
+		}
+     }
+	
+
