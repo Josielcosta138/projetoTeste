@@ -3,6 +3,8 @@ package pacoteclasses;
 import java.util.ArrayList;
 import java.util.List;
 
+import cursojava.constantes.statusAluno;
+
 // Classe - Objeto que representa o Aluno 
 public class Aluno {
 	
@@ -180,17 +182,17 @@ public class Aluno {
 		
 	
 		if (media >= 9) {			
-		return " Parabens Acima da Média";
+		return statusAluno.APROVADOACIMAMEDIA;
 		
 		}else if (media >= 7) {			
-			return " Aprovado";	
+			return statusAluno.APROVADO;	
 					
 				
 		}else if (media < 7 && media > 5) {
-				return " Aluno em Recuperação ";
+				return statusAluno.RECUPERACAO;
 			
 		}else { 
-				return" Reprovado";
+				return statusAluno.REPROVADO;
 		}	
 
 	}

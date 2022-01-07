@@ -103,13 +103,30 @@ public class estruturaDeclaracao {
 			
 		   } // Percorrendo Lista pelas Posições
 		 	
-		 	
 		   for (int pos = 0; pos < alunos.size(); pos++) {
 			   
 			   System.out.println(" ");
-			   Aluno aluno = alunos.get(pos);
-			   System.out.println(" Aluno: "+aluno.getNome());
 			   
+			   	Aluno aluno = alunos.get(pos);   
+			   	
+			   	// Substituindo um Aluno na Lista
+			   	if (aluno.getNome().equalsIgnoreCase("Jose")) {
+			   		
+			   		Aluno alunoTrocar = new Aluno();   // Novo Objeto alunoTrocar 
+			   		alunoTrocar.setNome(" Bruna Troca");
+			   		
+			   		Diciplina disciplina = new Diciplina();	// Novo Objeto disciplina
+			   		disciplina.setDiciplina(" Arquitetura Software");
+			   		disciplina.setNota(9);
+			   		
+			   		alunoTrocar.getDiciplinas().add(disciplina);
+			   		alunos.set(pos, alunoTrocar);	// Adiciona o alunoTrocar na pos da Lista de alunos
+			   		
+			   		aluno = alunos.get(pos); // aluno = recebendo alunoTrocra
+			   		
+				}
+			   
+			   		System.out.println(" Aluno: "+aluno.getNome());
 			   
 			   for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
 				   Diciplina disc = aluno.getDiciplinas().get(posList);
@@ -119,7 +136,7 @@ public class estruturaDeclaracao {
 			   System.out.println(" Média: "+aluno.getMediaNota());
 			   System.out.println(" Resultado: "+aluno.getAlunoAprovado());
 			   
-			   
+				
 		  }
 		}
      }
