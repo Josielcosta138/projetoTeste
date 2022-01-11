@@ -7,6 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.text.Position;
 
+import cursojava.constantes.statusAluno;
 import pacoteclasses.Aluno;
 import pacoteclasses.Diciplina;
 
@@ -15,18 +16,22 @@ public class estruturaDeclaracao {
 	public static void main(String[] args) {
 
 		// New Aluno() é uma instancia ( Criação de Objeto ) cria na memória do Java
-		// aluno1 é uma referencia ao objeto Aluno
+		// aluno1 é uma referencia ao objeto Aluno6
 		
 		
 		
 		// Lista dos Alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
+		List<Aluno> alunosAprovado = new ArrayList<Aluno>();
+		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
+		List<Aluno> alunosReprovado = new ArrayList<Aluno>();
+		List<Aluno> alunosAcimaDaMedia = new ArrayList<Aluno>();
 		
 		 
 		 //String qtdAlunos = JOptionPane.showInputDialog(" Quantos alunos na sala? ");
 		// aluno1.setQtdAlunos(Integer.valueOf(qtdAlunos));
 		 
-		 	for (int posAlunos = 1; posAlunos <= 2; posAlunos++) {
+		 	for (int posAlunos = 1; posAlunos <= 3; posAlunos++) {
 			
 		 	// Inicializando Objeto 		
 			Aluno aluno1 = new Aluno();
@@ -99,46 +104,88 @@ public class estruturaDeclaracao {
 			}*/
 		 
 			
-			alunos.add(aluno1); // Adicionando a o aluno1 a Lista de (alunos) 	
-			
-		   } // Percorrendo Lista pelas Posições
+			alunos.add(aluno1); // Adicionando a o aluno1 a Lista de (alunos) 				
+		} 
 		 	
-		   for (int pos = 0; pos < alunos.size(); pos++) {
-			   
-			   System.out.println(" ");
-			   
-			   	Aluno aluno = alunos.get(pos);   
-			   	
-			   	// Substituindo um Aluno na Lista
-			   	if (aluno.getNome().equalsIgnoreCase("Jose")) {
-			   		
-			   		Aluno alunoTrocar = new Aluno();   // Novo Objeto alunoTrocar 
-			   		alunoTrocar.setNome(" Bruna Troca");
-			   		
-			   		Diciplina disciplina = new Diciplina();	// Novo Objeto disciplina
-			   		disciplina.setDiciplina(" Arquitetura Software");
-			   		disciplina.setNota(9);
-			   		
-			   		alunoTrocar.getDiciplinas().add(disciplina);
-			   		alunos.set(pos, alunoTrocar);	// Adiciona o alunoTrocar na pos da Lista de alunos
-			   		
-			   		aluno = alunos.get(pos); // aluno = recebendo alunoTrocra
-			   		
-				}
-			   
-			   		System.out.println(" Aluno: "+aluno.getNome());
-			   
-			   for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
-				   Diciplina disc = aluno.getDiciplinas().get(posList);
-					System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
-			}
-			   
-			   System.out.println(" Média: "+aluno.getMediaNota());
-			   System.out.println(" Resultado: "+aluno.getAlunoAprovado());
-			   
+		 	for (Aluno aluno : alunos) {  // Processando a lista ( Aprovados ,Acima Média, Recuperção )
+		 		
+		 		if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.APROVADO) ) {
+					alunosAprovado.add(aluno);
+				}else {
+					if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.APROVADOACIMAMEDIA)) {
+						alunosAcimaDaMedia.add(aluno);
+					}else {
+						if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.RECUPERACAO)) {
+							alunosRecuperacao.add(aluno);
+						}else {
+							if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.REPROVADO)) {
+								alunosReprovado.add(aluno);
+								
+							}	// if reprovado
+						} // if recuperaçao
+					} // if acima media
+				} // if aprovado
 				
-		  }
-		}
-     }
+			} // if For aluno
+		 	
+		 	
+		 	System.out.println("------------------- Lista Aprovados ----------------");
+		 	for (Aluno aluno : alunosAprovado) {
+		 		System.out.println(" ");
+				System.out.println( " Aluno "+aluno.getNome() );
+				System.out.println(" Média: "+aluno.getMediaNota());
+				System.out.println(" Resultado: "+aluno.getAlunoAprovado());
+				
+				for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
+					   Diciplina disc = aluno.getDiciplinas().get(posList);
+						System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
+				}
+		 	}
+		 	System.out.println("--------------------------------------");
+		 	
+		 	System.out.println("----------------- Lista Acima da Média -----------------");
+		 	for (Aluno aluno : alunosAcimaDaMedia) {
+		 		System.out.println(" ");
+				System.out.println(" Aluno "+aluno.getNome());
+				System.out.println(" Média: "+aluno.getMediaNota());
+				System.out.println(" Resultado: "+aluno.getAlunoAprovado());
+				
+				for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
+					   Diciplina disc = aluno.getDiciplinas().get(posList);
+						System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
+				}
+			}
+		 	System.out.println("--------------------------------------");
+		 	
+		 	System.out.println("-------------------- Lista Recuperação --------------------------");
+		 	for (Aluno aluno : alunosRecuperacao) {
+		 		System.out.println(" ");
+		 		System.out.println(" Aluno "+aluno.getNome());
+		 		System.out.println(" Média: "+aluno.getMediaNota());
+				System.out.println(" Resultado: "+aluno.getAlunoAprovado());
+		 		
+		 		for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
+					   Diciplina disc = aluno.getDiciplinas().get(posList);
+						System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
+				}
+			}
+		 	System.out.println("--------------------------------------");
+		 	
+		 	System.out.println("----------------- Lista Reprovado ---------------------------");
+		 	for (Aluno aluno : alunosReprovado) {
+		 		System.out.println(" ");
+		 		System.out.println(" Aluno "+aluno.getNome());
+		 		System.out.println(" Média: "+aluno.getMediaNota());
+				System.out.println(" Resultado: "+aluno.getAlunoAprovado());
+		 		
+		 		for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
+					   Diciplina disc = aluno.getDiciplinas().get(posList);
+						System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
+				}
+			}
+	}
+}
+		 	
+     
 	
 
