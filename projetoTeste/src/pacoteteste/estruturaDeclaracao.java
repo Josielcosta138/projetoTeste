@@ -20,8 +20,11 @@ public class estruturaDeclaracao {
 		// New Aluno() é uma instancia ( Criação de Objeto ) cria na memória do Java
 		// aluno1 é uma referencia ao objeto Aluno6
 		
+		String login = JOptionPane.showInputDialog(" Informe seu Login? ");
+		String senha = JOptionPane.showInputDialog(" Informe sua Senha? ");
 		
-		
+			if (login.equalsIgnoreCase("JosielC") && senha.equalsIgnoreCase("janice27")) {
+				
 		// Lista dos Alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
@@ -170,7 +173,13 @@ public class estruturaDeclaracao {
 					   Diciplina disc = aluno.getDiciplinas().get(posList);
 						System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
 				}
-			}
+		 		
+		 		
+		 		}
+		 	// if login
+			}else {
+				JOptionPane.showMessageDialog(null, " Login e Senha Inválida! ");
+		}
 	}
 }
 		 	
