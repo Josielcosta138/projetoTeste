@@ -1,4 +1,78 @@
 
+/* Removendo Diciplina 
+		int escolha = JOptionPane.showConfirmDialog(null, " Deseja excluir alguma Diciplina? ");
+						
+			if (escolha == 0) {	// Opção Sim = 0 
+					
+				int continuarRemover = 0;
+				int posicao = 1;
+				
+				while (continuarRemover == 0) {				
+					
+					JOptionPane.showMessageDialog(null, " Listas de Diciplinas: "+aluno1.getDiciplinas());
+					
+				String diciplinaRemover = JOptionPane.showInputDialog(" Informe qual diciplina irá excluir"
+						+ " 1 ,2 ,3 ou 4? ");	
+				//Chamando na lista da Diciplina					// Posiçção na Lista [0], [1], [2], [3]  por isso (  - 1  )
+				aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() - posicao );
+				posicao ++;
+				continuarRemover = JOptionPane.showConfirmDialog(null, " Continuar a Remover? ");	
+				
+				}// while		
+			}*/
+
+
+
+
+
+// Lista dos Alunos
+		List<Aluno> alunos = new ArrayList<Aluno>();
+		
+		List<Aluno> alunosAprovado = new ArrayList<Aluno>();
+		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
+		List<Aluno> alunosReprovado = new ArrayList<Aluno>();
+		List<Aluno> alunosAcimaDaMedia = new ArrayList<Aluno>();
+		
+		
+		alunos.add(aluno1); // Adicionando a o aluno1 a Lista de (alunos) 				
+		} 
+		 	
+		 	for (Aluno aluno : alunos) {  // Processando a lista ( Aprovados ,Acima Média, Recuperção )
+		 		
+		 		if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.APROVADO) ) {
+					alunosAprovado.add(aluno);
+				}else {
+					if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.APROVADOACIMAMEDIA)) {
+						alunosAcimaDaMedia.add(aluno);
+					}else {
+						if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.RECUPERACAO)) {
+							alunosRecuperacao.add(aluno);
+						}else {
+							if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.REPROVADO)) {
+								alunosReprovado.add(aluno);
+								
+							}	// if reprovado
+						} // if recuperaçao
+					} // if acima media
+				} // if aprovado
+				
+			} // if For aluno
+		 	
+		 	
+		 	System.out.println("------------------- Lista Aprovados ----------------");
+		 	for (Aluno aluno : alunosAprovado) {
+		 		System.out.println(" ");
+				System.out.println( " Aluno "+aluno.getNome() );
+				System.out.println(" Média: "+aluno.getMediaNota());
+				System.out.println(" Resultado: "+aluno.getAlunoAprovado());
+				
+				for (int posList = 0; posList < aluno.getDiciplinas().size(); posList++) {
+					   Diciplina disc = aluno.getDiciplinas().get(posList);
+						System.out.println(" Diciplinas: "+disc.getDiciplina()+" nota: "+disc.getNota());
+				}
+		 	}
+
+
 
 // Percorrendo Lista pelas Posições
 		 	

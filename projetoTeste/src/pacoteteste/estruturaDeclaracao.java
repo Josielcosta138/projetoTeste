@@ -1,7 +1,9 @@
 package pacoteteste;
 
+import java.awt.Container;
 import java.nio.file.attribute.PosixFileAttributes;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -22,16 +24,15 @@ public class estruturaDeclaracao {
 		
 		// Lista dos Alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
-		List<Aluno> alunosAprovado = new ArrayList<Aluno>();
-		List<Aluno> alunosRecuperacao = new ArrayList<Aluno>();
-		List<Aluno> alunosReprovado = new ArrayList<Aluno>();
-		List<Aluno> alunosAcimaDaMedia = new ArrayList<Aluno>();
 		
+		// Uma Lista com uma chave de Identificação
+		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
+		 
 		 
 		 //String qtdAlunos = JOptionPane.showInputDialog(" Quantos alunos na sala? ");
 		// aluno1.setQtdAlunos(Integer.valueOf(qtdAlunos));
 		 
-		 	for (int posAlunos = 1; posAlunos <= 3; posAlunos++) {
+		 	for (int posAlunos = 1; posAlunos <= 6; posAlunos++) {
 			
 		 	// Inicializando Objeto 		
 			Aluno aluno1 = new Aluno();
@@ -78,48 +79,34 @@ public class estruturaDeclaracao {
 				diciplina.setNota(Double.valueOf(notaDiciplina)); //transformou String em Double
 			
 			aluno1.getDiciplinas().add(diciplina); // adicionou a Lista de diciplinas
-		
 		}
-				
-		/* Removendo Diciplina 
-		int escolha = JOptionPane.showConfirmDialog(null, " Deseja excluir alguma Diciplina? ");
-						
-			if (escolha == 0) {	// Opção Sim = 0 
-					
-				int continuarRemover = 0;
-				int posicao = 1;
-				
-				while (continuarRemover == 0) {				
-					
-					JOptionPane.showMessageDialog(null, " Listas de Diciplinas: "+aluno1.getDiciplinas());
-					
-				String diciplinaRemover = JOptionPane.showInputDialog(" Informe qual diciplina irá excluir"
-						+ " 1 ,2 ,3 ou 4? ");	
-				//Chamando na lista da Diciplina					// Posiçção na Lista [0], [1], [2], [3]  por isso (  - 1  )
-				aluno1.getDiciplinas().remove(Integer.valueOf(diciplinaRemover).intValue() - posicao );
-				posicao ++;
-				continuarRemover = JOptionPane.showConfirmDialog(null, " Continuar a Remover? ");	
-				
-				}// while		
-			}*/
-		 
-			
+		
+		// Cria um objeto HashMap chamado Status dos Alunos
+			maps.put(statusAluno.APROVADO, new ArrayList<Aluno>());
+			maps.put(statusAluno.APROVADOACIMAMEDIA, new ArrayList<Aluno>());
+			maps.put(statusAluno.RECUPERACAO, new ArrayList<Aluno>());
+			maps.put(statusAluno.REPROVADO, new ArrayList<Aluno>());
+		
 			alunos.add(aluno1); // Adicionando a o aluno1 a Lista de (alunos) 				
 		} 
 		 	
-		 	for (Aluno aluno : alunos) {  // Processando a lista ( Aprovados ,Acima Média, Recuperção )
+			for (Aluno aluno : alunos) {  // Processando e adicionando aluno na lista ( Aprovados ,Acima Média, Recuperção )
 		 		
 		 		if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.APROVADO) ) {
-					alunosAprovado.add(aluno);
+					maps.get(statusAluno.APROVADO).add(aluno);
+					
 				}else {
 					if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.APROVADOACIMAMEDIA)) {
-						alunosAcimaDaMedia.add(aluno);
+						maps.get(statusAluno.APROVADOACIMAMEDIA).add(aluno);
+						
 					}else {
 						if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.RECUPERACAO)) {
-							alunosRecuperacao.add(aluno);
+							maps.get(statusAluno.RECUPERACAO).add(aluno);
+							
 						}else {
 							if (aluno.getAlunoAprovado().equalsIgnoreCase(statusAluno.REPROVADO)) {
-								alunosReprovado.add(aluno);
+								maps.get(statusAluno.REPROVADO).add(aluno);
+								
 								
 							}	// if reprovado
 						} // if recuperaçao
@@ -129,8 +116,9 @@ public class estruturaDeclaracao {
 			} // if For aluno
 		 	
 		 	
+			// Mostrando Listas de Alunos
 		 	System.out.println("------------------- Lista Aprovados ----------------");
-		 	for (Aluno aluno : alunosAprovado) {
+		 	for (Aluno aluno : maps.get(statusAluno.APROVADO)) {
 		 		System.out.println(" ");
 				System.out.println( " Aluno "+aluno.getNome() );
 				System.out.println(" Média: "+aluno.getMediaNota());
@@ -144,7 +132,7 @@ public class estruturaDeclaracao {
 		 	System.out.println("--------------------------------------");
 		 	
 		 	System.out.println("----------------- Lista Acima da Média -----------------");
-		 	for (Aluno aluno : alunosAcimaDaMedia) {
+		 	for (Aluno aluno : maps.get(statusAluno.APROVADOACIMAMEDIA)) {
 		 		System.out.println(" ");
 				System.out.println(" Aluno "+aluno.getNome());
 				System.out.println(" Média: "+aluno.getMediaNota());
@@ -158,7 +146,7 @@ public class estruturaDeclaracao {
 		 	System.out.println("--------------------------------------");
 		 	
 		 	System.out.println("-------------------- Lista Recuperação --------------------------");
-		 	for (Aluno aluno : alunosRecuperacao) {
+		 	for (Aluno aluno : maps.get(statusAluno.RECUPERACAO)) {
 		 		System.out.println(" ");
 		 		System.out.println(" Aluno "+aluno.getNome());
 		 		System.out.println(" Média: "+aluno.getMediaNota());
@@ -172,7 +160,7 @@ public class estruturaDeclaracao {
 		 	System.out.println("--------------------------------------");
 		 	
 		 	System.out.println("----------------- Lista Reprovado ---------------------------");
-		 	for (Aluno aluno : alunosReprovado) {
+		 	for (Aluno aluno : maps.get(statusAluno.REPROVADO)) {
 		 		System.out.println(" ");
 		 		System.out.println(" Aluno "+aluno.getNome());
 		 		System.out.println(" Média: "+aluno.getMediaNota());
