@@ -11,7 +11,6 @@ import javax.swing.text.Position;
 
 import cursojava.constantes.statusAluno;
 import pacoteclasses.Aluno;
-import pacoteclasses.Diciplina;
 
 public class estruturaDeclaracao {
 

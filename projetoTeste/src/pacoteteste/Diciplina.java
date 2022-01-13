@@ -1,4 +1,4 @@
-package pacoteclasses;
+package pacoteteste;
 
 public class Diciplina {
 

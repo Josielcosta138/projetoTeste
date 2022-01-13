@@ -4,35 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cursojava.constantes.statusAluno;
+import pacoteteste.Diciplina;
 
 // Classe - Objeto que representa o Aluno 
-public class Aluno {
+public class Aluno extends Pessoa {
 	
 	// Atributos da classe Aluno
-	private String nome;
-	private int idade;
-	private String cpf;
-	private String telefone;
-	private String dataMatricula;
-	private String dataNascimento;
-	private String registroGeral;
-	private String nomeMae;
-	private String nomePai;
 	private String nomeEscola;
 	private String seriaMatriculado;
-	private int qtddiciplina;
+	private String dataMatricula;
 	private int qtdAlunos;
-	
-	
+	private int qtddiciplina;
+	List<Diciplina> diciplinas = new ArrayList<Diciplina>();// Instancia Objeto na memória - Tipo Lista 
 
 		// Cria método Aluno - sendo padrão Java
 		public Aluno () {
 		}
 		
 			
-	// Instancia Objeto na memória - Tipo Lista 
-	 List<Diciplina> diciplinas = new ArrayList<Diciplina>();
-
 	// Setters e Getters de diciplinas
 	public void setDiciplinas(List<Diciplina> diciplinas) {
 		this.diciplinas = diciplinas;
@@ -43,20 +32,6 @@ public class Aluno {
 	}
 	
 	
-	
-	// Métodos GETTERS and SETTERS
-	
-	// SET para receber ou adicionar dados no Atributos
-	// GET para resgatar ou obter valor do Atributo
-	// Receber dados
-	
-	
-	
-	
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
 	public int getQtdAlunos() {
 		return qtdAlunos;
 	}
@@ -65,11 +40,7 @@ public class Aluno {
 		this.qtdAlunos = qtdAlunos;
 	}
 
-	public String getNome() {
-		return nome;
-	}
 	
-
 	public int getQtddiciplina() {
 		return qtddiciplina;
 	}
@@ -78,30 +49,7 @@ public class Aluno {
 		this.qtddiciplina = qtddiciplina;
 	}
 
-	public int getIdade() {
-		return idade;
-	}
-      
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-
+	
 	public String getDataMatricula() {
 		return dataMatricula;
 	}
@@ -110,38 +58,7 @@ public class Aluno {
 		this.dataMatricula = dataMatricula;
 	}
 
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-	public String getRegistroGeral() {
-		return registroGeral;
-	}
-
-	public void setRegistroGeral(String registroGeral) {
-		this.registroGeral = registroGeral;
-	}
-
-	public String getNomeMae() {
-		return nomeMae;
-	}
-
-	public void setNomeMae(String nomeMae) {
-		this.nomeMae = nomeMae;
-	}
-
-	public String getNomePai() {
-		return nomePai;
-	}
-
-	public void setNomePai(String nomePai) {
-		this.nomePai = nomePai;
-	}
-
+	
 	public String getNomeEscola() {
 		return nomeEscola;
 	}
@@ -200,7 +117,7 @@ public class Aluno {
 	
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", telefone=" + telefone
+		return "Aluno [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", telefone=" 
 				+ ", dataMatricula=" + dataMatricula + ", dataNascimento=" + dataNascimento + ", registroGeral="
 				+ registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", nomeEscola=" + nomeEscola
 				+ ", seriaMatriculado=" + seriaMatriculado + ", qtddiciplina=" + qtddiciplina + ", qtdAlunos="

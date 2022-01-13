@@ -1,3 +1,10 @@
+// Métodos GETTERS and SETTERS
+	
+	// SET para receber ou adicionar dados no Atributos
+	// GET para resgatar ou obter valor do Atributo
+	// Receber dados
+
+
 
 /* Removendo Diciplina 
 		int escolha = JOptionPane.showConfirmDialog(null, " Deseja excluir alguma Diciplina? ");
