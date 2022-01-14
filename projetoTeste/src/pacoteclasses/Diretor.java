@@ -1,5 +1,6 @@
 package pacoteclasses;
 
+//Classe Filha de Pessoas
 public class Diretor extends Pessoa {
 	
 	private String registroEducacao;
@@ -32,6 +33,11 @@ public class Diretor extends Pessoa {
 				+ "]";
 	}
 
+	
+	public String msgMaiorIdade() {
+		return this.maiorIdade() ? " Maior Idade " : " Menor Idade"; // Verificação Se?   Senao:
+			
+		}
 	
 	
 }

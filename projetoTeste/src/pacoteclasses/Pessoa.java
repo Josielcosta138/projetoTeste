@@ -57,13 +57,18 @@ public class Pessoa {
 			this.nomePai = nomePai;
 		}
 		
+		
 		@Override
 		public String toString() {
 			return "Pessoa [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento
 					+ ", registroGeral=" + registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 		}
 		
-		
+		// Retorna True ou False
+		public boolean maiorIdade() {
+			return idade >= 18;
+			
+		}
 
 		
 }

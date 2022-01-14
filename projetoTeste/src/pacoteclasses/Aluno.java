@@ -7,6 +7,7 @@ import cursojava.constantes.statusAluno;
 import pacoteteste.Diciplina;
 
 // Classe - Objeto que representa o Aluno 
+//Classe Filha de Pessoas
 public class Aluno extends Pessoa {
 	
 	// Atributos da classe Aluno
@@ -117,11 +118,11 @@ public class Aluno extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return "Aluno [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", telefone=" 
-				+ ", dataMatricula=" + dataMatricula + ", dataNascimento=" + dataNascimento + ", registroGeral="
-				+ registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + ", nomeEscola=" + nomeEscola
-				+ ", seriaMatriculado=" + seriaMatriculado + ", qtddiciplina=" + qtddiciplina + ", qtdAlunos="
-				+ qtdAlunos + ", diciplinas=" + diciplinas + "]";
+		return "Aluno [nomeEscola=" + nomeEscola + ", seriaMatriculado=" + seriaMatriculado + ", dataMatricula="
+				+ dataMatricula + ", qtdAlunos=" + qtdAlunos + ", qtddiciplina=" + qtddiciplina + ", diciplinas="
+				+ diciplinas + ", nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", dataNascimento="
+				+ dataNascimento + ", registroGeral=" + registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+				+ "]";
 	}
 
 	@Override
@@ -156,4 +157,16 @@ public class Aluno extends Pessoa {
 		return true;
 	}
 	
-}
+	@Override // Indentifica o método Sobrescrito
+	public boolean maiorIdade() {
+		return idade >= 40;
+	}
+	
+	public String msgMaiorIdade() {
+		return this.maiorIdade() ? " Maior Idade " : " Menor Idade"; // Verificação Se?   Senao:
+			
+		}
+	
+	}
+	
+

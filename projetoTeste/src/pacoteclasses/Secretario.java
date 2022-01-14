@@ -1,11 +1,11 @@
 package pacoteclasses;
 
+// Classe Filha de Pessoas
 public class Secretario extends Pessoa {
 	
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
-	
 	
 	
 	public String getRegistro() {
@@ -27,6 +27,22 @@ public class Secretario extends Pessoa {
 		this.experiencia = experiencia;
 	}
 	
+	@Override
+	public String toString() {
+		return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", experiencia=" + experiencia
+				+ ", nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento
+				+ ", registroGeral=" + registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
+	}
 	
+	public String msgMaiorIdade() {
+		return this.maiorIdade() ? " Maior Idade " : " Menor Idade"; // Verificação Se?   Senao:
+			
+		}
+		
+	@Override
+	public boolean maiorIdade() {
+		
+		return idade >= 34;
+	}
 
 }
