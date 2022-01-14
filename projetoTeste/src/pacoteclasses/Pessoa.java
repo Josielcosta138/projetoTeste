@@ -1,5 +1,6 @@
 package pacoteclasses;
 
+// ClassePai SuperClasse ClasseMaster (Atributos comun a Todos Objetos
 public class Pessoa {
 	
 	// Atributos da classe Aluno
@@ -55,6 +56,14 @@ public class Pessoa {
 		public void setNomePai(String nomePai) {
 			this.nomePai = nomePai;
 		}
+		
+		@Override
+		public String toString() {
+			return "Pessoa [nome=" + nome + ", idade=" + idade + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento
+					+ ", registroGeral=" + registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
+		}
+		
+		
 
 		
 }

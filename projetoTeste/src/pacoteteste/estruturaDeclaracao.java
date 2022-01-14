@@ -11,9 +11,10 @@ import javax.swing.text.Position;
 
 import cursojava.constantes.statusAluno;
 import pacoteclasses.Aluno;
-
+/*
 public class estruturaDeclaracao {
 
+	
 	public static void main(String[] args) {
 
 		// New Aluno() é uma instancia ( Criação de Objeto ) cria na memória do Java
@@ -51,7 +52,7 @@ public class estruturaDeclaracao {
 		String nomeMae = JOptionPane.showInputDialog(" Informe nomeMae? ");
 		String nomePai = JOptionPane.showInputDialog(" Informe nomePai? ");
 		String escola = JOptionPane.showInputDialog(" Informe escola? ");
-		String anoMatricula = JOptionPane.showInputDialog(" Informe anoMatricula? ");*/
+		String anoMatricula = JOptionPane.showInputDialog(" Informe anoMatricula? ");
 		
 		
 		aluno1.setNome(nome);
@@ -65,11 +66,11 @@ public class estruturaDeclaracao {
 		aluno1.setNomeMae(nomeMae);
 		aluno1.setNomePai(nomePai);
 		aluno1.setNomeEscola(escola);
-		aluno1.setSeriaMatriculado(anoMatricula);*/
+		aluno1.setSeriaMatriculado(anoMatricula);
 		
 		  
 		
-		//  For para criar Lista de Notas e Diciplinas
+		  For para criar Lista de Notas e Diciplinas
 		for (int pos = 1; pos <= aluno1.getQtddiciplina(); pos++) {
 			
 			String nomeDiciplina =JOptionPane.showInputDialog(" Informe a diciplina "+pos+"°?");
@@ -182,6 +183,6 @@ public class estruturaDeclaracao {
 	}
 }
 		 	
-     
+     */
 	
 
