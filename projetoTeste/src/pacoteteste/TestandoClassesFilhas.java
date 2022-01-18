@@ -24,19 +24,31 @@ public class TestandoClassesFilhas {
 		secretario.setIdade(19);
 		
 		
-		aluno.maiorIdade();
+		/*aluno.maiorIdade();
 		diretor.maiorIdade();
 		secretario.maiorIdade();
 		
 		System.out.println(aluno.getNome());
 		System.out.println(aluno.msgMaiorIdade());
+		System.out.println(" "+aluno.salario());
 		
 		System.out.println(diretor.getNome());
 		System.out.println(diretor.msgMaiorIdade());
+		System.out.println(" "+diretor.salario());
 		
 		System.out.println(secretario.getNome());
-		System.out.println(secretario.msgMaiorIdade());
+		System.out.println(secretario.msgMaiorIdade());	
+		System.out.println(" "+secretario.salario());*/
 		
+		teste(aluno);
+		teste(secretario);
+		teste(diretor);
+		
+	}
+	
+	public static void teste (Pessoa pessoa) {
+		System.out.println("Metodo Pessoa Teste "+pessoa.getNome()+""
+				+ " Salário: "+pessoa.salario());
 		
 		
 	}

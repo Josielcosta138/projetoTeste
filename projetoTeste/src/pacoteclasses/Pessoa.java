@@ -1,7 +1,11 @@
 package pacoteclasses;
 
-// ClassePai SuperClasse ClasseMaster (Atributos comun a Todos Objetos
-public class Pessoa {
+	// Abstract = Não pode instanciar ou criar um Objeto fora dessa classe
+
+	// protected: permite acesso às classes filhas, mas proíbe a qualquer outro acesso externo.
+	
+//ClassePai SuperClasse ClasseMaster (Atributos comun a Todos Objetos
+public abstract class Pessoa {
 	
 	// Atributos da classe Aluno
 		protected String nome;
@@ -12,6 +16,8 @@ public class Pessoa {
 		protected String nomeMae;
 		protected String nomePai;
 		
+		// Método abstrato  na ClassePai é obrigatório para as classes Filhas
+		public abstract double salario();
 		
 		
 		public String getNome() {
@@ -64,7 +70,7 @@ public class Pessoa {
 					+ ", registroGeral=" + registroGeral + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + "]";
 		}
 		
-		// Retorna True ou False
+		//  Método MaiorIdade Retorna True ou False
 		public boolean maiorIdade() {
 			return idade >= 18;
 			

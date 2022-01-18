@@ -3,6 +3,9 @@ package pacoteclasses;
 //Classe Filha de Pessoas
 public class Diretor extends Pessoa {
 	
+	
+	// private: proíbe qualquer acesso externo à própria classe, inclusive das classes filhas.
+
 	private String registroEducacao;
 	private int tempoDirecao;
 	private String titulacao;
@@ -38,6 +41,11 @@ public class Diretor extends Pessoa {
 		return this.maiorIdade() ? " Maior Idade " : " Menor Idade"; // Verificação Se?   Senao:
 			
 		}
+	@Override
+	public double salario() {
+		// TODO Auto-generated method stub
+		return 4560.00;
+	}
 	
 	
 }

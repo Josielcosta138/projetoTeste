@@ -84,6 +84,7 @@ public class Aluno extends Pessoa {
 				double somaNotas = 0.0;
 				
 				// fOR para percorrer a Lista de diciplinas 	
+				
 				for (Diciplina diciplina : diciplinas) {
 					
 					somaNotas += diciplina.getNota();//somando Notas					
@@ -96,17 +97,18 @@ public class Aluno extends Pessoa {
 		
 	// Método verificação da Média
 	public String getAlunoAprovado () {
+		
 		double media = this.getMediaNota();
 		
-	
-		if (media >= 9) {			
-		return statusAluno.APROVADOACIMAMEDIA;
+			if (media >= 9) {			
+				return statusAluno.APROVADOACIMAMEDIA;
 		
-		}else if (media >= 7) {			
+		}else if (media >= 7) {		
+			
 			return statusAluno.APROVADO;	
 					
-				
 		}else if (media < 7 && media > 5) {
+			
 				return statusAluno.RECUPERACAO;
 			
 		}else { 
@@ -166,6 +168,12 @@ public class Aluno extends Pessoa {
 		return this.maiorIdade() ? " Maior Idade " : " Menor Idade"; // Verificação Se?   Senao:
 			
 		}
+
+
+	@Override
+	public double salario() {
+		return 1800.00 * 0.9;
+	}
 	
 	}
 	
