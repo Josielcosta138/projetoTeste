@@ -10,8 +10,10 @@ import javax.swing.JOptionPane;
 import javax.swing.text.Position;
 
 import cursojava.constantes.statusAluno;
+import cursojava.interfaces.PermitirAcesso;
 import pacoteclasses.Aluno;
-/*
+import pacoteclasses.Secretario;
+
 public class estruturaDeclaracao {
 
 	
@@ -23,10 +25,11 @@ public class estruturaDeclaracao {
 		String login = JOptionPane.showInputDialog(" Informe seu Login? ");
 		String senha = JOptionPane.showInputDialog(" Informe sua Senha? ");
 		
-			if (login.equalsIgnoreCase("JosielC") && senha.equalsIgnoreCase("janice27")) {
+			if (new Secretario().autenticar(login, senha)) {
 				
 		// Lista dos Alunos
 		List<Aluno> alunos = new ArrayList<Aluno>();
+		
 		
 		// Uma Lista com uma chave de Identificação
 		HashMap<String, List<Aluno>> maps = new HashMap<String, List<Aluno>>();
@@ -35,7 +38,7 @@ public class estruturaDeclaracao {
 		 //String qtdAlunos = JOptionPane.showInputDialog(" Quantos alunos na sala? ");
 		// aluno1.setQtdAlunos(Integer.valueOf(qtdAlunos));
 		 
-		 	for (int posAlunos = 1; posAlunos <= 6; posAlunos++) {
+		 	for (int posAlunos = 1; posAlunos <= 2; posAlunos++) {
 			
 		 	// Inicializando Objeto 		
 			Aluno aluno1 = new Aluno();
@@ -52,7 +55,7 @@ public class estruturaDeclaracao {
 		String nomeMae = JOptionPane.showInputDialog(" Informe nomeMae? ");
 		String nomePai = JOptionPane.showInputDialog(" Informe nomePai? ");
 		String escola = JOptionPane.showInputDialog(" Informe escola? ");
-		String anoMatricula = JOptionPane.showInputDialog(" Informe anoMatricula? ");
+		String anoMatricula = JOptionPane.showInputDialog(" Informe anoMatricula? ");*/
 		
 		
 		aluno1.setNome(nome);
@@ -66,11 +69,11 @@ public class estruturaDeclaracao {
 		aluno1.setNomeMae(nomeMae);
 		aluno1.setNomePai(nomePai);
 		aluno1.setNomeEscola(escola);
-		aluno1.setSeriaMatriculado(anoMatricula);
+		aluno1.setSeriaMatriculado(anoMatricula);*/
 		
 		  
 		
-		  For para criar Lista de Notas e Diciplinas
+		  //For para criar Lista de Notas e Diciplinas
 		for (int pos = 1; pos <= aluno1.getQtddiciplina(); pos++) {
 			
 			String nomeDiciplina =JOptionPane.showInputDialog(" Informe a diciplina "+pos+"°?");
@@ -177,12 +180,14 @@ public class estruturaDeclaracao {
 		 		
 		 		}
 		 	// if login
-			}else {
-				JOptionPane.showMessageDialog(null, " Login e Senha Inválida! ");
+		
+			} else {
+				
+				JOptionPane.showMessageDialog(null, " Senha ou Login Invalido! ");
+			}
 		}
 	}
-}
 		 	
-     */
+     
 	
 

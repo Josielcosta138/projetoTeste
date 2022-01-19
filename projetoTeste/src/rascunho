@@ -1,3 +1,25 @@
+
+if (new Secretario().autenticar(login, senha)) {
+
+
+
+/*Secretario secretario = new Secretario();
+		secretario.setLogin(login);
+		secretario.setSenha(senha);
+		*/
+
+@Override
+	public boolean autenticar() {
+		 
+		return login.equalsIgnoreCase("janice27") && senha.equalsIgnoreCase("janice37");
+	}
+
+
+
+
+
+
+
 // Métodos GETTERS and SETTERS
 	
 	// SET para receber ou adicionar dados no Atributos

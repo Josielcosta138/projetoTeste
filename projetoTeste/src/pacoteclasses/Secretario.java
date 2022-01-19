@@ -1,12 +1,13 @@
 package pacoteclasses;
 
+import cursojava.interfaces.PermitirAcesso;
+
 // Classe Filha de Pessoas
-public class Secretario extends Pessoa {
+public class Secretario extends Pessoa implements PermitirAcesso {
 	
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
-	
 	
 	public String getRegistro() {
 		return registro;
@@ -27,6 +28,7 @@ public class Secretario extends Pessoa {
 		this.experiencia = experiencia;
 	}
 	
+	
 	@Override
 	public String toString() {
 		return "Secretario [registro=" + registro + ", nivelCargo=" + nivelCargo + ", experiencia=" + experiencia
@@ -43,11 +45,29 @@ public class Secretario extends Pessoa {
 	public boolean maiorIdade() {
 		
 		return idade >= 34;
+		
 	}
 	@Override
 	public double salario() {
-		// TODO Auto-generated method stub
+		
 		return 1500.00;
 	}
+	
+	
+	// Método do contrato de Autentificação
+	
+	@Override
+	public boolean autenticar(String login, String senha) {
+		return login.equalsIgnoreCase("janice27") && senha.equalsIgnoreCase("janice37");
+	}
+	
+	
+	@Override
+	public boolean autenticar() {
+		return false;
+	}
+	
+	
+	
 
 }
