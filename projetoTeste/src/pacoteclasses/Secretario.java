@@ -55,19 +55,9 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	
 	
 	// Método do contrato de Autentificação
-	
 	@Override
 	public boolean autenticar(String login, String senha) {
 		return login.equalsIgnoreCase("janice27") && senha.equalsIgnoreCase("janice37");
 	}
 	
-	
-	@Override
-	public boolean autenticar() {
-		return false;
-	}
-	
-	
-	
-
 }
