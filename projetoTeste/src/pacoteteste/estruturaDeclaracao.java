@@ -25,11 +25,14 @@ public class estruturaDeclaracao {
 		String login = JOptionPane.showInputDialog(" Informe seu Login? ");
 		String senha = JOptionPane.showInputDialog(" Informe sua Senha? ");
 		
-				while ( senha.equalsIgnoreCase(senha) && login.equalsIgnoreCase(login)  )  {
-			
+		String Login =  JOptionPane.showInputDialog(" Informe seu Login da Escola? ");
+		String Senha = JOptionPane.showInputDialog(" Informe sua senha Numérica? ");
+		
 			
 			if (new Secretario().autenticar(login, senha)) {
 				
+				if (new Secretario().autenticarSenhaSala(Login, Senha)) {
+					
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
 			// Uma Lista com uma chave de Identificação
@@ -180,17 +183,16 @@ public class estruturaDeclaracao {
 		 		
 		 		
 		 		}
+		 	
+				
 		 	// if login
 		
 			} else {
 				
-					JOptionPane.showMessageDialog(null, " Senha ou Login Invalido! ");
+						JOptionPane.showMessageDialog(null, " Senha ou Login Invalido! ");
 					
-					
-				
-				}
-			
-			} //while
+					}
+			}
 		}
 	}
 		 	

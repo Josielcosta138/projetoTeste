@@ -1,9 +1,10 @@
 package pacoteclasses;
 
 import cursojava.interfaces.PermitirAcesso;
+import cursojava.interfaces.PermitirAcessoEscola;
 
 // Classe Filha de Pessoas
-public class Secretario extends Pessoa implements PermitirAcesso {
+public class Secretario extends Pessoa implements PermitirAcesso, PermitirAcessoEscola {
 	
 	private String registro;
 	private String nivelCargo;
@@ -58,6 +59,14 @@ public class Secretario extends Pessoa implements PermitirAcesso {
 	@Override
 	public boolean autenticar(String login, String senha) {
 		return login.equalsIgnoreCase("janice27") && senha.equalsIgnoreCase("janice37");
+	}
+	
+	
+	// Método do contrato Autenticar Sala
+	@Override
+	public boolean autenticarSenhaSala(String Login, String Senha) {
+		
+		return Login.equalsIgnoreCase("heriberto") && Senha.equalsIgnoreCase("270393");
 	}
 	
 }
