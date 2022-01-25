@@ -13,6 +13,15 @@ public class Secretario extends Pessoa implements PermitirAcesso  {
 	private String senha;
 	
 	
+	public Secretario(String login, String senha) {
+		this.login = login;		// senha e login da classe Secretário
+		this.senha = senha;
+	}
+	
+	public Secretario() {
+		// TODO Auto-generated constructor stub CONSTRUTOR PADÃRO
+	}
+
 	public String getRegistro() {
 		return registro;
 	}
@@ -57,18 +66,11 @@ public class Secretario extends Pessoa implements PermitirAcesso  {
 		return 1500.00;
 	}
 	
-	public Secretario(String login, String senha) {
-	}
-	
-	
-	public Secretario() {
-		
-	}
 	
 	// Método do contrato de Autentificação
 	@Override
 	public boolean autenticar(String login, String senha) {
-		this.login = login;
+		this.login = login;  // login irá Receber o login do Parametro dentro do método
 		this.senha = senha;
 		return autenticar();
 	}

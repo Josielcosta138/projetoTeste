@@ -30,7 +30,7 @@ public class estruturaDeclaracao {
 		
 		//new FuncaoAutenticacao(permitirAcesso).autenticar()
 			
-			if (new Secretario().autenticar(login, senha)) {
+			if (permitirAcesso .autenticar( )) {
 				
 					
 		List<Aluno> alunos = new ArrayList<Aluno>();
