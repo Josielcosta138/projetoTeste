@@ -9,6 +9,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.text.Position;
 
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.statusAluno;
 import cursojava.interfaces.PermitirAcesso;
 import pacoteclasses.Aluno;
@@ -25,13 +26,12 @@ public class estruturaDeclaracao {
 		String login = JOptionPane.showInputDialog(" Informe seu Login? ");
 		String senha = JOptionPane.showInputDialog(" Informe sua Senha? ");
 		
-		String Login =  JOptionPane.showInputDialog(" Informe seu Login da Escola? ");
-		String Senha = JOptionPane.showInputDialog(" Informe sua senha Numérica? ");
+		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
+		//new FuncaoAutenticacao(permitirAcesso).autenticar()
 			
 			if (new Secretario().autenticar(login, senha)) {
 				
-				if (new Secretario().autenticarSenhaSala(Login, Senha)) {
 					
 		List<Aluno> alunos = new ArrayList<Aluno>();
 		
@@ -194,7 +194,7 @@ public class estruturaDeclaracao {
 					}
 			}
 		}
-	}
+	
 		 	
      
 	

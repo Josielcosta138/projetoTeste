@@ -20,7 +20,7 @@ public class TestandoClassesFilhas {
 		
 		
 		Secretario secretario = new Secretario();
-		secretario.setNome(" Sec Joana ");
+		secretario.setNome(" Sec Bruna ");
 		secretario.setIdade(19);
 		
 		
