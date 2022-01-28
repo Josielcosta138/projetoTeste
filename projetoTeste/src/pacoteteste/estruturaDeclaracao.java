@@ -19,6 +19,8 @@ public class estruturaDeclaracao {
 
 	
 	public static void main(String[] args) {
+		
+		try {
 
 		// New Aluno() é uma instancia ( Criação de Objeto ) cria na memória do Java
 		// aluno1 é uma referencia ao objeto Aluno6
@@ -29,8 +31,9 @@ public class estruturaDeclaracao {
 		PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		//new FuncaoAutenticacao(permitirAcesso).autenticar()
+		//permitirAcesso .autenticar( )
 			
-			if (permitirAcesso .autenticar( )) {
+			if (new FuncaoAutenticacao(permitirAcesso).autenticar()) {
 				
 					
 		List<Aluno> alunos = new ArrayList<Aluno>();
@@ -97,6 +100,8 @@ public class estruturaDeclaracao {
 			maps.put(statusAluno.RECUPERACAO, new ArrayList<Aluno>());
 			maps.put(statusAluno.REPROVADO, new ArrayList<Aluno>());
 		
+			
+			System.out.println(" Aqui o erro. ");
 			alunos.add(aluno1); // Adicionando a o aluno1 a Lista de (alunos) 				
 		} 
 		 	
@@ -192,8 +197,43 @@ public class estruturaDeclaracao {
 						JOptionPane.showMessageDialog(null, " Senha ou Login Invalido! ");
 					
 					}
-			}
+			
+				}catch (Exception e) {
+					
+					StringBuilder saida = new StringBuilder();
+					
+					e.printStackTrace(); // imprime erro no console.
+					
+					System.out.println(" Motivo do erro: "+ e.getMessage());
+					System.out.println(" ");
+					
+					for (int i = 0; i < e.getStackTrace().length; i++) {
+						
+						// Classes de Exception no Console
+						System.out.println(" Classe:   "+e.getStackTrace()[i].getClassName());
+						System.out.println(" Método:   "+e.getStackTrace()[i].getMethodName());
+						System.out.println(" Pasta:    "+e.getStackTrace()[i].getFileName());
+						System.out.println(" Linha:    "+e.getStackTrace()[i].getLineNumber());
+						
+							// Classes de Exception em Caixa de msg na tela
+							saida.append("\n Classe:   "+e.getStackTrace()[i].getClassName());
+							saida.append("\n Método:   "+e.getStackTrace()[i].getMethodName());
+							saida.append("\n Pasta:    "+e.getStackTrace()[i].getFileName());
+							saida.append("\n Linha:    "+e.getStackTrace()[i].getLineNumber());
+							saida.append("\n Classe da Exc:    "+e.getClass().getName());
+							
+						
+						
+						
+						
+					}
+					
+					
+					JOptionPane.showMessageDialog(null, " Mensagem erro: "+ saida);
+			
+		    }
 		}
+	}
 	
 		 	
      

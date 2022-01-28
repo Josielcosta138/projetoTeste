@@ -12,6 +12,7 @@ public class Secretario extends Pessoa implements PermitirAcesso  {
 	private String login;
 	private String senha;
 	
+	//
 	
 	public Secretario(String login, String senha) {
 		this.login = login;		// senha e login da classe Secretário
