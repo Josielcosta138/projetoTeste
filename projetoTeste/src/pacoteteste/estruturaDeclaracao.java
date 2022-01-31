@@ -16,6 +16,7 @@ import org.omg.CORBA.ExceptionList;
 
 import com.sun.org.apache.bcel.internal.classfile.Field;
 
+import curso.java.exececao.ExcecaoProcessarNota;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.statusAluno;
 import cursojava.interfaces.PermitirAcesso;
@@ -25,21 +26,21 @@ import pacoteclasses.Secretario;
 public class estruturaDeclaracao {
 
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)  {
+		
+		
 		
 		try {
 			
+			lerArquivo();
 			
-		//File fil = new File("teste.txt");
-		//Scanner scannerLerArquivos = new Scanner(fil);	
-
 		// New Aluno() é uma instancia ( Criação de Objeto ) cria na memória do Java
 		// aluno1 é uma referencia ao objeto Aluno6
 		
 		String login = JOptionPane.showInputDialog(" Informe seu Login? ");
 		String senha = JOptionPane.showInputDialog(" Informe sua Senha? ");
 		
-		PermitirAcesso permitirAcesso = new Secretario(login, senha);
+			PermitirAcesso permitirAcesso = new Secretario(login, senha);
 		
 		//new FuncaoAutenticacao(permitirAcesso).autenticar()
 		//permitirAcesso .autenticar( )
@@ -214,7 +215,7 @@ public class estruturaDeclaracao {
 					
 					System.out.println(" ");
 					System.out.println("|--------------------------------------------------| ");
-					System.out.println(" ");
+					System.out.println(" "); 
 					System.out.println(" Motivo do erro: "+ e.getMessage()); // Mostra motivo do Erro
 					System.out.println(" ");
 					
@@ -240,10 +241,24 @@ public class estruturaDeclaracao {
 					JOptionPane.showMessageDialog(null, " Mensagem erro: "+ saida);
 		    }catch (NullPointerException e) {
 				e.printStackTrace();
-			}catch (Exception e) {
+			}catch (ExcecaoProcessarNota e) {
 				e.printStackTrace();
+				JOptionPane.showMessageDialog(null, " Erro exec Customizada! "+e.getMessage());
+				System.out.println(" Erro exec Customizada! "+e.getMessage());
+			}finally {
+				JOptionPane.showMessageDialog(null, " Fim de execução Main ");
 			}
+		}
 		
+		public static void lerArquivo() throws ExcecaoProcessarNota  {
+			
+			try {
+				
+			File fil = new File("teste.txt");
+			Scanner scannerLerArquivos = new Scanner(fil);	
+			} catch (FileNotFoundException e) {
+				throw new ExcecaoProcessarNota(e.getMessage());
+			}
 		}
 	}
 	
