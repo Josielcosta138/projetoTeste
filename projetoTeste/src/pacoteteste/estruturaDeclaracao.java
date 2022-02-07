@@ -32,8 +32,7 @@ public class estruturaDeclaracao {
 		
 		try {
 			
-			lerArquivo();
-			
+		//lerArquivo();
 		// New Aluno() é uma instancia ( Criação de Objeto ) cria na memória do Java
 		// aluno1 é uma referencia ao objeto Aluno6
 		
@@ -65,6 +64,7 @@ public class estruturaDeclaracao {
 		// Entradas de Dados para os Atributos Aluno	
      	String nome = JOptionPane.showInputDialog(" Informe nome? "+posAlunos+"°");
      	String qtddiciplina = JOptionPane.showInputDialog(" Informe qntd diciplinas? ");
+
      	String idade = JOptionPane.showInputDialog(" Informe idade? ");
      	/*String cpf = JOptionPane.showInputDialog(" Informe cpf? ");
 		String telefone = JOptionPane.showInputDialog(" Informe telefone? ");
@@ -207,7 +207,7 @@ public class estruturaDeclaracao {
 			
 				 // Inicio de tratamento e exibios de ( EXCEÇÕES )
 			
-				}catch (NumberFormatException e) {	 //Exceção inesperada ( Todas que encontrar )
+				}catch (Exception e) {	 //Exceção Number format )
 					
 					StringBuilder saida = new StringBuilder();
 					
@@ -226,7 +226,7 @@ public class estruturaDeclaracao {
 						System.out.println(" Método:   "+e.getStackTrace()[i].getMethodName());
 						System.out.println(" Pasta:    "+e.getStackTrace()[i].getFileName());
 						System.out.println(" Linha:    "+e.getStackTrace()[i].getLineNumber());
-						System.out.println(" ");
+						System.out.println(" ");	
 						System.out.println("|--------------------------------------------------| ");
 						
 							// Classes de Exception em Caixa de msg na tela
@@ -239,13 +239,9 @@ public class estruturaDeclaracao {
 					}
 					
 					JOptionPane.showMessageDialog(null, " Mensagem erro: "+ saida);
-		    }catch (NullPointerException e) {
-				e.printStackTrace();
-			}catch (ExcecaoProcessarNota e) {
-				e.printStackTrace();
-				JOptionPane.showMessageDialog(null, " Erro exec Customizada! "+e.getMessage());
-				System.out.println(" Erro exec Customizada! "+e.getMessage());
-			}finally {
+				}
+					
+		    finally {
 				JOptionPane.showMessageDialog(null, " Fim de execução Main ");
 			}
 		}
@@ -254,8 +250,9 @@ public class estruturaDeclaracao {
 			
 			try {
 				
-			File fil = new File("teste.txt");
-			Scanner scannerLerArquivos = new Scanner(fil);	
+				File fil = new File("teste.txt");
+				Scanner scannerLerArquivos = new Scanner(fil);	
+				
 			} catch (FileNotFoundException e) {
 				throw new ExcecaoProcessarNota(e.getMessage());
 			}
