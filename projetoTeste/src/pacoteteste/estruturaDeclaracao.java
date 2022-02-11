@@ -28,8 +28,6 @@ public class estruturaDeclaracao {
 	
 	public static void main(String[] args)  {
 		
-		
-		
 		try {
 			
 		//lerArquivo();

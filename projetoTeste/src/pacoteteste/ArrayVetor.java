@@ -2,71 +2,39 @@ package pacoteteste;
 
 import javax.swing.JOptionPane;
 
+import com.sun.org.apache.xalan.internal.xsltc.compiler.sym;
+
+import pacoteclasses.Aluno;
+
 public class ArrayVetor {
 	
 	public static void main(String[] args) {
 		
+		// CRIAÇÃO DO ALUNO
+		Aluno aluno = new Aluno();
+		aluno.setNome(" Asdrubol ");
+		aluno.setNomeEscola(" SATC ");
 		
-			String[] nomes = new String[3];
-			String[] dadoFixo =  {"Joao@gmail.com ", "Bruna@gmail.com", "Asdrubol@gmail.com", "2022"};
-			
-			
-				nomes[2] = " Joao ";
-				nomes[1] = " Bruna ";
-				nomes[0] = " Aspdrubol ";
+		// CRIAÇÃO DA DICIPLINA
+		Diciplina diciplina = new Diciplina();
+		diciplina.setDiciplina(" Curso Java");
 		
-				// EXIBIÇÃO ARRAY DE NOMES
-				for (int pos = 0; pos < nomes.length; pos++) {
-					
-					System.out.println(" Posição do Array  "+(pos +1)+"° : Nome:"+nomes[pos]);
-				}
-				System.out.println(" ");
-				
-				// EXIBIÇÃO ARRAY DE DADOSFIXO
-				for (int j = 0; j < dadoFixo.length; j++) {
-				
-					System.out.println(" Posição do Array  "+(j +1)+"° : Dados fixos: "+dadoFixo[j]);
-				}
-				
-		/* Array pode ser de todos tipos de Objetos */
-		/* Array sempre tem que ter posições Definindas [0], [1].... */
+		double[] notas = {8,7.7,8,9};
+		diciplina.setNota(notas);
 		
-		// INFORMANDO A QNTD DE POSIÇÕES NO ARRAY
-				/*
-		String Qntdposicoes = JOptionPane.showInputDialog(" Informe a qntd de Posições? ");
+		aluno.getDiciplinas().add(diciplina);
 		
-			double notaSoma = 0;	
-			double[] notas = new double[Integer.parseInt(Qntdposicoes)];
+		System.out.println(" Aluno :"+aluno.getNome()+"\n"
+				+ " Escola: "+aluno.getNomeEscola()+"\n"
+						+ " Diciplina: "+diciplina.getDiciplina());
+		
+		for (int i = 0; i < notas.length; i++) {
 			
-			
-		  // INFORMANDO AS NOTAS NAS POSIÇÕES
-		  for (int pos = 0; pos < notas.length; pos++) {
-			
-			  String valor = JOptionPane.showInputDialog(" Informe a nota "+ ( pos +1));
-			  
-			  	notas[pos] =  Double.parseDouble(valor); 
+			System.out.println(" Notas: "+diciplina.nota[i]);
+		
 		}
-		
-		
-		  	// EXIBI NA TELA NOTAS E POSIÇÕES
-			for (int pos = 0; pos < notas.length; pos++) {
-				
-				System.out.println(" Posição Array "+ pos +". "+" Nota "+ (pos +1)+"° = " +notas[pos]);
-			
-		}
-		
-			// SOMA NOTAS E EXIBI 
-				String pos1 = JOptionPane.showInputDialog(" informe a Posição para somar Notas");
-				int notaSomar1 =  Integer.parseInt(pos1);
-				
-				String pos2 = JOptionPane.showInputDialog(" informe a Posição para somar Notas");
-				int notaSomar2 =  Integer.parseInt(pos2);
-			
-						notaSoma = (notas[notaSomar1] + notas[notaSomar2]);
-				
-								System.out.println(" ");
-								System.out.println(" Nota somada: "+notaSoma);
-			*/
+		System.out.println(" Notas média: "+diciplina.getMediaNotas());
 	}	
+	
 
 }

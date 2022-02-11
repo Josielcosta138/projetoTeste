@@ -1,10 +1,13 @@
 package pacoteteste;
 
+import java.util.Arrays;
+
 public class Diciplina {
 
-	//Atributos da Diciplina
 	private String diciplina;
-	double nota ;
+	
+	// CADA DICIPLINA TERÁ 4 NOTAS
+	double[] nota = new double[4] ;
 	
 	// Setters e Gatters 
 	public String getDiciplina() {
@@ -13,13 +16,35 @@ public class Diciplina {
 	public void setDiciplina(String diciplina) {
 		this.diciplina = diciplina;
 	}
-	public double getNota() {
+	
+	
+	public double[] getNota() {
 		return nota;
 	}
-	public void setNota(double nota) {
+	public void setNota(double[] nota) {
 		this.nota = nota;
 	}
 	
+	
+	// MÉTODO PARA CALCULAR A MÉDIA 
+	public double getMediaNotas() {
+		
+		double somaTotal = 0;
+		
+			for (int pos = 0; pos < nota.length; pos++) {
+			somaTotal += nota[pos];
+			
+		}
+		return somaTotal / nota.length ;
+	}
+	
+	
+	
+		// ToString para vizualizar Dados
+		@Override
+			public String toString() {
+			return "Diciplina [diciplina=" + diciplina + ", nota=" + nota + "]";
+	}
 	
 	// HashCode e Equals para comparar Objeto
 	@Override
@@ -27,12 +52,8 @@ public class Diciplina {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((diciplina == null) ? 0 : diciplina.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(nota);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + Arrays.hashCode(nota);
 		return result;
-		
-		
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -48,15 +69,9 @@ public class Diciplina {
 				return false;
 		} else if (!diciplina.equals(other.diciplina))
 			return false;
-		if (Double.doubleToLongBits(nota) != Double.doubleToLongBits(other.nota))
+		if (!Arrays.equals(nota, other.nota))
 			return false;
 		return true;
-	}
-	
-	// ToString para vizualizar Dados
-	@Override
-	public String toString() {
-		return "Diciplina [diciplina=" + diciplina + ", nota=" + nota + "]";
 	}
 	
 }

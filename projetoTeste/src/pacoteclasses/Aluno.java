@@ -83,15 +83,12 @@ public class Aluno extends Pessoa {
 				// Inicialando variavel
 				double somaNotas = 0.0;
 				
-				// fOR para percorrer a Lista de diciplinas 	
-				
-				for (Diciplina diciplina : diciplinas) {
+					// fOR para percorrer a Lista de diciplinas 	
+					for (Diciplina diciplina : diciplinas) {
 					
-					somaNotas += diciplina.getNota();//somando Notas					
+						somaNotas += diciplina.getMediaNotas();//SOMA DICIPLINAS 					
 				}				
-				
-				// Dividindo retorno das diciplinas for inseridas na Lista
-				return somaNotas /diciplinas.size(); 
+				return somaNotas /diciplinas.size(); // MÉDIA DE TODAS DICIPLINAS
 			}
 	
 		
