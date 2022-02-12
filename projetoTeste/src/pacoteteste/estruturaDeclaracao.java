@@ -99,7 +99,7 @@ public class estruturaDeclaracao {
 				//Instacia o Objeto
 				Diciplina diciplina = new Diciplina();
 				diciplina.setDiciplina(nomeDiciplina);
-				diciplina.setNota(Double.valueOf(notaDiciplina)); //transformou String em Double
+				//diciplina.setNota(Double.valueOf(notaDiciplina)); //transformou String em Double
 			
 			aluno1.getDiciplinas().add(diciplina); // adicionou a Lista de diciplinas
 		}

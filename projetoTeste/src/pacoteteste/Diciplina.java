@@ -8,6 +8,8 @@ public class Diciplina {
 	
 	// CADA DICIPLINA TERÁ 4 NOTAS
 	double[] nota = new double[4] ;
+
+	public double[] notas2;
 	
 	// Setters e Gatters 
 	public String getDiciplina() {
