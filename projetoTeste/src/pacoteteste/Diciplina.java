@@ -5,15 +5,33 @@ import java.util.Arrays;
 public class Diciplina {
 
 	private String diciplina;
+	private double maior;
+	private double menor;
 	
 	// CADA DICIPLINA TERÁ 4 NOTAS
 	double[] nota = new double[4] ;
 
-	public double[] notas2;
 	
 	// Setters e Gatters 
+	
+	
+	
+	
+	
 	public String getDiciplina() {
 		return diciplina;
+	}
+	public double getMaior() {
+		return maior;
+	}
+	public void setMaior(double maior) {
+		this.maior = maior;
+	}
+	public double getMenor() {
+		return menor;
+	}
+	public void setMenor(double menor) {
+		this.menor = menor;
 	}
 	public void setDiciplina(String diciplina) {
 		this.diciplina = diciplina;
