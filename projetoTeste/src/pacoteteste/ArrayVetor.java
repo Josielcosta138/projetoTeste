@@ -38,69 +38,110 @@ public class ArrayVetor {
 		aluno.getDiciplinas().add(diciplina2);
 		aluno.getDiciplinas().add(diciplina3);
 
-		System.out.println(" Aluno: " + aluno.getNome());
+		// ------------------------ ALUNO 2 -------------------------------/
 
-		for (Diciplina disc : aluno.getDiciplinas()) {
-			System.out.println(" DICIPLINAS ALUNO--------------");
+		// CRIAÇÃO DO ALUNO
+		Aluno aluno2 = new Aluno();
+		aluno2.setNome(" Zezinho ");
+		aluno2.setNomeEscola(" UNESC ");
 
-			System.out.println(" Diciplina :" + disc.getDiciplina());
+		// CRIAÇÃO DA DICIPLINA
+		Diciplina diciplina7 = new Diciplina();
+		diciplina7.setDiciplina(" Lógica");
 
-			System.out.println(" ");
+		Diciplina diciplina4 = new Diciplina();
+		diciplina4.setDiciplina(" Ingles");
 
-			double maior = 0.0;
-			double menor = 10.0;
+		Diciplina diciplina5 = new Diciplina();
+		diciplina5.setDiciplina(" Banco ");
 
-			for (int i = 0; i < disc.getNota().length; i++) {
-				System.out.println(" Notas " + (i + 1) + "°: " + disc.getNota()[i]);
+		double[] notas4 = { 8, 5.7, 7, 8 };
+		diciplina4.setNota(notas4);
 
-				
-				// MAIOR NOTA
-				if (disc.getNota()[i] == 0) {
+		double[] notas5 = { 3, 23, 1.99, 2 };
+		diciplina5.setNota(notas5);
 
-					maior = disc.getNota()[i];
-					diciplina.setMaior(maior);
+		double[] notas7 = { 6.55, 8.9, 3, 50 };
+		diciplina7.setNota(notas7);
 
-				} else {
-					
-					if (disc.getNota() [i] > maior) {
+		aluno2.getDiciplinas().add(diciplina4);
+		aluno2.getDiciplinas().add(diciplina5);
+		aluno2.getDiciplinas().add(diciplina7);
 
-						maior = disc.getNota()[i];
-						diciplina.setMaior(maior);
+		Aluno[] arrayAluno = new Aluno[2];
 
-					}
+		arrayAluno[0] = aluno;
+		arrayAluno[1] = aluno2;
+
+		for (int i = 0; i < arrayAluno.length; i++) {
+			System.out.println(" Aluno: " + arrayAluno[i].getNome());
+
+			for (Diciplina d : arrayAluno[i].getDiciplinas()) {
+
+				System.out.println(" Diciplinas" + d.getDiciplina());
+
+				for (int j = 0; j < d.getNota().length; j++) {
+
+					System.out.println(" Notas: " + d.getNota()[j]);
+
 				}
-				
-				// MENOR NOTA
-				if (disc.getNota()[i] == 0) {
-
-					menor = disc.getNota()[i];
-					diciplina.setMenor(menor);
-
-				} else {
-					
-					if (disc.getNota() [i] < menor) {
-
-						menor = disc.getNota()[i];
-						diciplina.setMenor(menor);
-
-					}
-				}
-				
-				
 
 			}
-			
-			System.out.println(" ");
-			System.out.println(" Maior nota da Diciplina: "+disc.getDiciplina()+" "+ diciplina.getMaior());
-			System.out.println(" ");
-			
-			
-			System.out.println(" Menor nota da Diciplina: "+disc.getDiciplina()+" "+ diciplina.getMenor());
-			System.out.println(" ");
 		}
 
 		/*
-		 * System.out.println(" Aluno :"+aluno.getNome()+"\n" +
+		 * System.out.println(" Aluno: " + aluno.getNome());
+		 * 
+		 * for (Diciplina disc : aluno.getDiciplinas()) {
+		 * System.out.println(" DICIPLINAS ALUNO--------------");
+		 * 
+		 * System.out.println(" Diciplina :" + disc.getDiciplina());
+		 * 
+		 * System.out.println(" ");
+		 * 
+		 * double maior = 0.0; double menor = 10.0;
+		 * 
+		 * for (int i = 0; i < disc.getNota().length; i++) {
+		 * System.out.println(" Notas " + (i + 1) + "°: " + disc.getNota()[i]);
+		 * 
+		 * 
+		 * // MAIOR NOTA if (disc.getNota()[i] == 0) {
+		 * 
+		 * maior = disc.getNota()[i]; diciplina.setMaior(maior);
+		 * 
+		 * } else {
+		 * 
+		 * if (disc.getNota() [i] > maior) {
+		 * 
+		 * maior = disc.getNota()[i]; diciplina.setMaior(maior);
+		 * 
+		 * } }
+		 * 
+		 * // MENOR NOTA if (disc.getNota()[i] == 0) {
+		 * 
+		 * menor = disc.getNota()[i]; diciplina.setMenor(menor);
+		 * 
+		 * } else {
+		 * 
+		 * if (disc.getNota() [i] < menor) {
+		 * 
+		 * menor = disc.getNota()[i]; diciplina.setMenor(menor);
+		 * 
+		 * } }
+		 * 
+		 * 
+		 * 
+		 * }
+		 * 
+		 * System.out.println(" ");
+		 * System.out.println(" Maior nota da Diciplina: "+disc.getDiciplina()+" "+
+		 * diciplina.getMaior()); System.out.println(" ");
+		 * 
+		 * 
+		 * System.out.println(" Menor nota da Diciplina: "+disc.getDiciplina()+" "+
+		 * diciplina.getMenor()); System.out.println(" "); }/*
+		 * 
+		 * /* System.out.println(" Aluno :"+aluno.getNome()+"\n" +
 		 * " Escola: "+aluno.getNomeEscola()+"\n" +
 		 * " Diciplina: "+diciplina.getDiciplina());
 		 * 
