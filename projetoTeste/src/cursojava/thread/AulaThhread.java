@@ -2,7 +2,7 @@ package cursojava.thread;
 
 import javax.swing.JOptionPane;
 
-public class Thhread {
+public class AulaThhread {
 
 	public static void main(String[] args) throws InterruptedException {
 
