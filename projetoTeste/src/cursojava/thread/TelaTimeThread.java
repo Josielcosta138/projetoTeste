@@ -89,11 +89,12 @@ private Runnable thread2 = new Runnable() {
 		descricaoHora.setPreferredSize(new Dimension( 200, 25));
 		jPanel.add(descricaoHora, gridBagConstraints);
 		
-		
 		mostraTempo.setPreferredSize(new Dimension(200, 25));
 		gridBagConstraints.gridy ++; 
 		mostraTempo.setEditable(false);
 		jPanel.add(mostraTempo, gridBagConstraints);
+		
+		
 		
 		descricaoHora2.setPreferredSize(new Dimension(200, 25));
 		gridBagConstraints.gridy ++;
