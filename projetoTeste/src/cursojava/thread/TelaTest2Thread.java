@@ -1,6 +1,7 @@
 package cursojava.thread;
 
 import java.awt.BorderLayout;
+/*
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -87,4 +88,4 @@ public class TelaTest2Thread extends JDialog {
 		
 	}
 
-}
+}*/
