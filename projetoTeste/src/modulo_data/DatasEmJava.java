@@ -2,72 +2,32 @@ package modulo_data;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
+
+import sun.util.resources.CalendarData;
 
 public class DatasEmJava {
 	
 	public static void main(String[] args) throws ParseException {
 		
-		Calendar calendar = Calendar.getInstance();
 		
-		Date date = new Date();
+		/*============= Faixa de tempo com ChronoUnit =================*/
 		
-		/*----------------- Object CALENDAR -----------------*/
+		//Date dataPassada = new SimpleDateFormat("dd/MM/yyyy").parse("01/02/2022");
 		
-		//System.out.println(" Data e milisegundos " + date.getTime());
-		//System.out.println(" Calendar e Milisegundos " + calendar.getTimeInMillis());
-		//System.out.println(" Calendario dia mes " + (calendar.DAY_OF_MONTH));
+		long  dias = ChronoUnit.DAYS.between(LocalDate.parse("2021-02-22"), LocalDate.now());
+		System.out.println("Entre a data 2021-02-22 \nPossui "+dias+" Dias de diferença até a data atual! ");
+		System.out.println(" ");
 		
-		/*
-		Calendar now = Calendar.getInstance();
-	    System.out.println(now.getTime());
-	    System.out.println(" Dia Noite " + calendar.get(calendar.AM_PM)); */
+		long  meses = ChronoUnit.MONTHS.between(LocalDate.parse("2022-02-22"), LocalDate.now());
+		System.out.println("Entre o MÊs 2021-06-22 \nPossui "+meses+" Mêses de diferença até a data atual! ");
+		System.out.println(" ");
 		
-		System.out.println(" Calendar Week - DiaMÊs " + (calendar.get(calendar.DAY_OF_WEEK) -1));
-		System.out.println(" Dia do mês "+date.getDay()); 
-		System.out.println(" ---------------------------------------------------------------------");
-		
-		System.out.println(" Calendar Week - MÊs " + (calendar.get(calendar.MONTH) +1));
-		System.out.println(" Mês "+(date.getMonth() + 1));
-		System.out.println(" ---------------------------------------------------------------------");
-		
-		System.out.println(" Calendar Week - Ano " + (calendar.get(calendar.YEAR)));
-		System.out.println(" Ano "+ (date.getYear() + 1900));
-		System.out.println(" ---------------------------------------------------------------------");
-		
-		System.out.println(" Calendar Week - Horas " + (calendar.get(calendar.HOUR_OF_DAY)));
-		System.out.println(" Horas "+date.getHours());
-		System.out.println(" ---------------------------------------------------------------------");
-		
-		System.out.println(" Calendar Week - Minutos " + (calendar.get(calendar.MINUTE)));
-		System.out.println(" Minutos "+date.getMinutes());
-		System.out.println(" ---------------------------------------------------------------------");
-		
-		System.out.println(" Calendar Week - Segundos" + (calendar.get(calendar.SECOND)));
-		System.out.println(" Segundos "+date.getSeconds());
-		
-		/*-----------------Simple Date Format-----------------*/
-		
-		
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		SimpleDateFormat simpleDateFormatBanco = new SimpleDateFormat("yyyy-MM-DD hh:mm.ss");
-		
-		System.out.println(" Data atual em formato padrão String"+simpleDateFormat.format(date));
-		System.out.println(" Data em formato para Banco " + simpleDateFormatBanco.format(date));
-		
-		System.out.println(" Calendar data Atual " + calendar.getInstance().getTime());  // Pega data atual e Horas e Segundos 
-		
-		
-		//simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd");
-		//System.out.println(" Objeto Date " + simpleDateFormat.parse("1987/10/18"));
-		
-		simpleDateFormat = new SimpleDateFormat("hh:mm.ss");
-		System.out.println(" Objeto Date " + simpleDateFormat.parse("18:20.2")); 
-		
-		
-		
-		
+		long  anos = ChronoUnit.YEARS.between(LocalDate.parse("1990-02-22"), LocalDate.now());
+		System.out.println("Entre o Ano 1990-02-22 \nPossui "+anos+" Anos de diferença até a data atual! ");
 		
 		
 		
