@@ -1,6 +1,175 @@
 CALENDAR DATE
 
 
+
+/* ============= Nova API de Data E Hora a Partir do Java 8   BOLETOOO  ================= */
+
+		LocalDate dataBase = LocalDate.parse("2019-02-03");
+		
+		System.out.println("EMISSÃO DO SEU BOLETO! ");
+		System.out.println(" ");
+		for (int data = 1; data < 8; data++) {
+			dataBase = dataBase.plusMonths(1);
+			
+			System.out.println("Boleto "+data+"° mês : " 
+			+ dataBase.format(DateTimeFormatter.ofPattern("     dd-MM-yyyy")));
+		}
+		
+		System.out.println(" ");
+		System.out.println(" ");
+		LocalDateTime dataEhoraAtual = LocalDateTime.now();
+		System.out.println("Ativação do Boleto! : "+
+		dataEhoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm.s"))); //ofPattern para formatar a Data
+		System.out.println(" ");
+	}
+	
+	
+	
+
+/* ============= Nova API de Data E Hora a Partir do Java 8 ================= */
+
+		LocalDate dataBase = LocalDate.parse("2019-10-04");
+		
+		System.out.println("Mais 5 dias : " + (dataBase = dataBase.plusDays(5))); //plusDay soma 5
+		
+		System.out.println("Mais 7 semanas : " + (dataBase = dataBase.plusWeeks(7)));
+		
+		System.out.println("Mais 8 anos : " +(dataBase = dataBase.plusYears(8)));
+		
+		System.out.println("Mais 3 meses : " +(dataBase = dataBase.plusMonths(3)));
+		
+		System.out.println("Menos 1 meses : " +(dataBase = dataBase.minusMonths(1)));
+		
+		System.out.println("Mais 11 dias : " + (dataBase = dataBase.plusDays(11)));
+
+
+/* ============= Nova API de Data E Hora a Partir do Java 8 ================= */
+
+		LocalDate dataAntiga = LocalDate.of(2019, 2, 7);
+		
+		
+		LocalDate dataNova = LocalDate.of(2021, 7, 4);
+		
+		System.out.println("Data antiga é maior que data Nova : "+dataAntiga.isAfter(dataNova));
+	
+		System.out.println("Data antiga é maior que data Nova : "+dataAntiga.isBefore(dataNova));
+		
+		System.out.println("Datas são iguais ? " + dataAntiga.isEqual(dataNova));
+		
+		Period periodo = Period.between(dataAntiga, dataNova);
+		
+		System.out.println("Quantos dias :" +periodo.getDays());
+		
+		System.out.println("Quantos Meses :" +periodo.getMonths());
+		
+		System.out.println("Quantos Anos :" +periodo.getYears());
+
+/* ============= Nova API de Data E Hora a Partir do Java 8 ================= */
+
+		Instant inicio = Instant.now();
+		
+		Thread.sleep(2000);  //Pode ser um processo com tempo qualquer que não conhecemos
+		
+		Instant ifinal = Instant.now();
+		
+		Duration duracao = Duration.between(inicio, ifinal);
+		
+		System.out.println(" Duração em nano segundos :" + duracao.toNanos());
+		
+		System.out.println(" Duração em minutos :" + duracao.toMinutes());
+		
+		System.out.println(" Duração em horas :" + duracao.toHours());
+
+/* ============= Nova API de Data E Hora a Partir do Java 8 ================= */
+
+		LocalDate localDate = LocalDate.now(); // Classe e método Data
+		LocalTime horaAtual = LocalTime.now(); // Classe Hora
+		System.out.println("Hora atual : " + horaAtual.format(DateTimeFormatter.ofPattern("hh:mm:s"))); //ofPattern para formatar a Data
+	 	System.out.println(" ");
+		 
+		LocalDateTime dataEhoraAtual = LocalDateTime.now(); // Classe Data e Hora
+		//System.out.println("Data e Hora atual : " + dataEhoraAtual);  
+
+		
+		Date dataInicial = new SimpleDateFormat("dd/MM/yyyy").parse("10/04/2022"); // Data Inicial
+
+		Calendar calendar = Calendar.getInstance(); // Instanciando Calendario
+		calendar.setTime(dataInicial);
+
+		for (int parcela = 1; parcela <= 6; parcela++) {
+			calendar.add(Calendar.MONTH, 1); // Adicionando um mês a cada FOR
+
+			System.out.println( parcela+"°"+" Parcela "  + " Vencimento em: "
+					+ new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
+		}
+		
+		
+		System.out.println(" ");
+		System.out.println("Ativação do Boleto! : "+
+		dataEhoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm.s"))); //ofPattern para formatar a Data
+		System.out.println(" ");
+		
+		System.out.println("Dia : "+localDate.getDayOfWeek());
+		
+		System.out.println("Mês : "+localDate.getMonthValue()+"-"+localDate.getMonth());
+		
+		System.out.println("ANO : "+localDate.getYear());
+	
+	}
+
+
+/* ============= Nova API de Data E Hora a Partir do Java 8 ================= */
+
+		LocalDate localDate = LocalDate.now(); // Classe e método Data
+		System.out.println("Data atual : "+localDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		
+		System.out.println("Dia da Semana : "+localDate.getDayOfWeek().name());
+		
+		System.out.println("Dia do mes : "+localDate.getDayOfMonth());
+		
+		System.out.println("Dia do ano : "+localDate.getDayOfYear());
+		
+		System.out.println("Dia : "+localDate.getDayOfWeek());
+		
+		System.out.println("Mês : "+localDate.getMonthValue()+"-"+localDate.getMonth());
+		
+		System.out.println("ANO : "+localDate.getYear());
+
+
+/* ============= Geramento de Parcelas  ================= */
+
+		/* ============= Nova API de Data E Hora a Partir do Java 8 ================= */
+
+	/*	LocalDate dataAtual = LocalDate.now(); // Classe e método Data
+		System.out.println("Data Atual : " + dataAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));//ofPattern para formatar a Data
+		System.out.println(" ");
+		
+		LocalTime horaAtual = LocalTime.now(); // Classe Hora
+		System.out.println("Hora atual : " + horaAtual.format(DateTimeFormatter.ofPattern("hh:mm:s"))); //ofPattern para formatar a Data
+	 	*/
+		
+		LocalDateTime dataEhoraAtual = LocalDateTime.now(); // Classe Data e Hora
+		//System.out.println("Data e Hora atual : " + dataEhoraAtual);  
+
+		
+		Date dataInicial = new SimpleDateFormat("dd/MM/yyyy").parse("10/04/2022"); // Data Inicial
+
+		Calendar calendar = Calendar.getInstance(); // Instanciando Calendario
+		calendar.setTime(dataInicial);
+
+		for (int parcela = 1; parcela <= 12; parcela++) {
+			calendar.add(Calendar.MONTH, 1); // Adicionando um mês a cada FOR
+
+			System.out.println( parcela+"°"+" Parcela "  + " Vencimento em: "
+					+ new SimpleDateFormat("dd/MM/yyyy").format(calendar.getTime()));
+		}
+		
+		
+		System.out.println(" ");
+		System.out.println("Data e Hora da Abertura do seu Boleto! : "+
+		dataEhoraAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm.s"))); //ofPattern para formatar a Data
+	}
+
 /*============= Faixa de tempo com ChronoUnit =================*/
 		
 		//Date dataPassada = new SimpleDateFormat("dd/MM/yyyy").parse("01/02/2022");
